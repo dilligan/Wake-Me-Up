@@ -22,12 +22,37 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
+	<key>IBCustomFonts</key>
+	<dict>
+		<key>Helvetica-Oblique</key>
+		<string>Lobster1.3</string>
+		<key>ArialMT</key>
+		<string>Lato-Bold</string>
+		<key>Helvetica</key>
+		<string>Lato-Regular</string>
+		<key>Helvetica-Light</key>
+		<string>Lato-Light</string>
+	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Lobster_1.3.otf</string>
+		<string>Lato-Bol.ttf</string>
+		<string>Lato-Lig.ttf</string>
+		<string>Lato-Reg.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+		<string>location</string>
+	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
+		<string>gps</string>
+		<string>location-services</string>
 		<string>armv7</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
@@ -36,5 +61,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
 </dict>
 </plist>

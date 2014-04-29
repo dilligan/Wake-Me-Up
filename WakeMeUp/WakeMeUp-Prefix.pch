@@ -14,3 +14,9 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+#define BAAlert(TITLE,MSG) [[[UIAlertView alloc] initWithTitle:(TITLE) \
+                message:(MSG) \
+                delegate:nil \
+                cancelButtonTitle:@"OK" \
+                otherButtonTitles:nil] show]

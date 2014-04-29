@@ -13,7 +13,6 @@
 		2601B98218D9241E0021E4EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2601B98018D9241E0021E4EE /* InfoPlist.strings */; };
 		2601B98418D9241E0021E4EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2601B98318D9241E0021E4EE /* main.m */; };
 		2601B98818D9241E0021E4EE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2601B98718D9241E0021E4EE /* AppDelegate.m */; };
-		2601B98B18D9241E0021E4EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2601B98918D9241E0021E4EE /* Main.storyboard */; };
 		2601B98E18D9241E0021E4EE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2601B98D18D9241E0021E4EE /* ViewController.m */; };
 		2601B99018D9241E0021E4EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2601B98F18D9241E0021E4EE /* Images.xcassets */; };
 		2601B99718D9241E0021E4EE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2601B99618D9241E0021E4EE /* XCTest.framework */; };
@@ -21,6 +20,47 @@
 		2601B99918D9241E0021E4EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2601B97B18D9241E0021E4EE /* UIKit.framework */; };
 		2601B9A118D9241E0021E4EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2601B99F18D9241E0021E4EE /* InfoPlist.strings */; };
 		2601B9A318D9241E0021E4EE /* WakeMeUpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2601B9A218D9241E0021E4EE /* WakeMeUpTests.m */; };
+		2601B9AE18D932F50021E4EE /* StopChooser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2601B9AD18D932F50021E4EE /* StopChooser.m */; };
+		2601BE9318D947320021E4EE /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2601BE9218D947320021E4EE /* libxml2.dylib */; };
+		2601BE9518D947520021E4EE /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2601BE9418D947520021E4EE /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		261D8AE0190C380C00ED6DF7 /* NSString+NSString_AddressFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 261D8ADF190C380C00ED6DF7 /* NSString+NSString_AddressFormat.m */; };
+		261D8AE2190C403200ED6DF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 261D8AE1190C403200ED6DF7 /* Main.storyboard */; };
+		261D8AEB190C42AF00ED6DF7 /* Chevron@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 261D8AE4190C42AF00ED6DF7 /* Chevron@2x.png */; };
+		261D8AEC190C42AF00ED6DF7 /* LocationPr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 261D8AE5190C42AF00ED6DF7 /* LocationPr@2x.png */; };
+		261D8AED190C42AF00ED6DF7 /* LocationUn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 261D8AE6190C42AF00ED6DF7 /* LocationUn@2x.png */; };
+		261D8AEE190C42AF00ED6DF7 /* SoundIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 261D8AE7190C42AF00ED6DF7 /* SoundIcon@2x.png */; };
+		261D8AEF190C42AF00ED6DF7 /* VibrationIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 261D8AE8190C42AF00ED6DF7 /* VibrationIcon@2x.png */; };
+		261D8AF0190C42AF00ED6DF7 /* WakeMeUpPr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 261D8AE9190C42AF00ED6DF7 /* WakeMeUpPr@2x.png */; };
+		261D8AF1190C42AF00ED6DF7 /* WakeMeUpUn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 261D8AEA190C42AF00ED6DF7 /* WakeMeUpUn@2x.png */; };
+		261D8AF3190C6CFF00ED6DF7 /* ButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 261D8AF2190C6CFF00ED6DF7 /* ButtonHighlight.png */; };
+		261D8AF6190C71CC00ED6DF7 /* FUISwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 261D8AF5190C71CC00ED6DF7 /* FUISwitch.m */; };
+		261D8AFB190C71F900ED6DF7 /* UIColor+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 261D8AF8190C71F900ED6DF7 /* UIColor+FlatUI.m */; };
+		261D8AFC190C71F900ED6DF7 /* UIImage+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 261D8AFA190C71F900ED6DF7 /* UIImage+FlatUI.m */; };
+		2635DD4718D9B56200AAE60E /* Locations.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 2635DD4618D9B56200AAE60E /* Locations.gpx */; };
+		2635DD4918D9B8B200AAE60E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2635DD4818D9B8B200AAE60E /* AVFoundation.framework */; };
+		2635DD6718DAA00200AAE60E /* ToneTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 2635DD6618DAA00200AAE60E /* ToneTable.m */; };
+		2635DD6A18DAA22000AAE60E /* ToneNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2635DD6918DAA22000AAE60E /* ToneNavController.m */; };
+		2635DD7518DAAB5B00AAE60E /* Apex.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2635DD6B18DAAB5B00AAE60E /* Apex.wav */; };
+		2635DD7618DAAB5B00AAE60E /* Bulletin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2635DD6C18DAAB5B00AAE60E /* Bulletin.wav */; };
+		2635DD7718DAAB5B00AAE60E /* Circuit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2635DD6D18DAAB5B00AAE60E /* Circuit.wav */; };
+		2635DD7818DAAB5B00AAE60E /* Crystals.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2635DD6E18DAAB5B00AAE60E /* Crystals.wav */; };
+		2635DD7918DAAB5B00AAE60E /* Night Owl.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2635DD6F18DAAB5B00AAE60E /* Night Owl.wav */; };
+		2635DD7A18DAAB5B00AAE60E /* Presto.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2635DD7018DAAB5B00AAE60E /* Presto.wav */; };
+		2635DD7B18DAAB5B00AAE60E /* Ripples.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2635DD7118DAAB5B00AAE60E /* Ripples.wav */; };
+		2635DD7C18DAAB5B00AAE60E /* Silk.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2635DD7218DAAB5B00AAE60E /* Silk.wav */; };
+		2635DD7D18DAAB5B00AAE60E /* Summit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2635DD7318DAAB5B00AAE60E /* Summit.wav */; };
+		2635DD7E18DAAB5B00AAE60E /* Waves.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2635DD7418DAAB5B00AAE60E /* Waves.wav */; };
+		2635DD8018DBBEA200AAE60E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2635DD7F18DBBEA200AAE60E /* MediaPlayer.framework */; };
+		267B09B218D9821E00370BD1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267B09B118D9821E00370BD1 /* CoreLocation.framework */; };
+		267B09B518D99CCC00370BD1 /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B09B418D99CCC00370BD1 /* Map.m */; };
+		267B09B718D99E8D00370BD1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267B09B618D99E8D00370BD1 /* MapKit.framework */; };
+		267B09BA18D9A73100370BD1 /* NavCont.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B09B918D9A73100370BD1 /* NavCont.m */; };
+		26945C3E18E2CAE1002C2B74 /* UIFont+IBCustomFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = 26945C3D18E2CAE1002C2B74 /* UIFont+IBCustomFonts.m */; };
+		26945C4218E2CEB7002C2B74 /* Lato-Bol.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26945C4018E2CB2F002C2B74 /* Lato-Bol.ttf */; };
+		26945C4318E2CEB7002C2B74 /* Lato-Lig.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26945C4118E2CB2F002C2B74 /* Lato-Lig.ttf */; };
+		26945C4418E2CEB7002C2B74 /* Lato-Reg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26945C3F18E2CB23002C2B74 /* Lato-Reg.ttf */; };
+		26945CAC18E37B6B002C2B74 /* sound_366.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26945CAB18E37B6B002C2B74 /* sound_366.mp3 */; };
+		26945CAE18E37EF4002C2B74 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26945CAD18E37EF4002C2B74 /* CoreMedia.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +84,6 @@
 		2601B98518D9241E0021E4EE /* WakeMeUp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WakeMeUp-Prefix.pch"; sourceTree = "<group>"; };
 		2601B98618D9241E0021E4EE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2601B98718D9241E0021E4EE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2601B98A18D9241E0021E4EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2601B98C18D9241E0021E4EE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		2601B98D18D9241E0021E4EE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2601B98F18D9241E0021E4EE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -53,6 +92,58 @@
 		2601B99E18D9241E0021E4EE /* WakeMeUpTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WakeMeUpTests-Info.plist"; sourceTree = "<group>"; };
 		2601B9A018D9241E0021E4EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2601B9A218D9241E0021E4EE /* WakeMeUpTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WakeMeUpTests.m; sourceTree = "<group>"; };
+		2601B9AC18D932F50021E4EE /* StopChooser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopChooser.h; sourceTree = "<group>"; };
+		2601B9AD18D932F50021E4EE /* StopChooser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopChooser.m; sourceTree = "<group>"; };
+		2601BE9118D946930021E4EE /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		2601BE9218D947320021E4EE /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		2601BE9418D947520021E4EE /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
+		261D8ADE190C380C00ED6DF7 /* NSString+NSString_AddressFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSString_AddressFormat.h"; sourceTree = "<group>"; };
+		261D8ADF190C380C00ED6DF7 /* NSString+NSString_AddressFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSString_AddressFormat.m"; sourceTree = "<group>"; };
+		261D8AE1190C403200ED6DF7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		261D8AE4190C42AF00ED6DF7 /* Chevron@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Chevron@2x.png"; sourceTree = "<group>"; };
+		261D8AE5190C42AF00ED6DF7 /* LocationPr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LocationPr@2x.png"; sourceTree = "<group>"; };
+		261D8AE6190C42AF00ED6DF7 /* LocationUn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LocationUn@2x.png"; sourceTree = "<group>"; };
+		261D8AE7190C42AF00ED6DF7 /* SoundIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SoundIcon@2x.png"; sourceTree = "<group>"; };
+		261D8AE8190C42AF00ED6DF7 /* VibrationIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VibrationIcon@2x.png"; sourceTree = "<group>"; };
+		261D8AE9190C42AF00ED6DF7 /* WakeMeUpPr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WakeMeUpPr@2x.png"; sourceTree = "<group>"; };
+		261D8AEA190C42AF00ED6DF7 /* WakeMeUpUn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WakeMeUpUn@2x.png"; sourceTree = "<group>"; };
+		261D8AF2190C6CFF00ED6DF7 /* ButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonHighlight.png; sourceTree = "<group>"; };
+		261D8AF4190C71CC00ED6DF7 /* FUISwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUISwitch.h; sourceTree = "<group>"; };
+		261D8AF5190C71CC00ED6DF7 /* FUISwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUISwitch.m; sourceTree = "<group>"; };
+		261D8AF7190C71F900ED6DF7 /* UIColor+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FlatUI.h"; sourceTree = "<group>"; };
+		261D8AF8190C71F900ED6DF7 /* UIColor+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FlatUI.m"; sourceTree = "<group>"; };
+		261D8AF9190C71F900ED6DF7 /* UIImage+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FlatUI.h"; sourceTree = "<group>"; };
+		261D8AFA190C71F900ED6DF7 /* UIImage+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FlatUI.m"; sourceTree = "<group>"; };
+		2635DD4618D9B56200AAE60E /* Locations.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Locations.gpx; sourceTree = "<group>"; };
+		2635DD4818D9B8B200AAE60E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		2635DD6518DAA00200AAE60E /* ToneTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToneTable.h; sourceTree = "<group>"; };
+		2635DD6618DAA00200AAE60E /* ToneTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToneTable.m; sourceTree = "<group>"; };
+		2635DD6818DAA22000AAE60E /* ToneNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToneNavController.h; sourceTree = "<group>"; };
+		2635DD6918DAA22000AAE60E /* ToneNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToneNavController.m; sourceTree = "<group>"; };
+		2635DD6B18DAAB5B00AAE60E /* Apex.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Apex.wav; sourceTree = "<group>"; };
+		2635DD6C18DAAB5B00AAE60E /* Bulletin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Bulletin.wav; sourceTree = "<group>"; };
+		2635DD6D18DAAB5B00AAE60E /* Circuit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Circuit.wav; sourceTree = "<group>"; };
+		2635DD6E18DAAB5B00AAE60E /* Crystals.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Crystals.wav; sourceTree = "<group>"; };
+		2635DD6F18DAAB5B00AAE60E /* Night Owl.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Night Owl.wav"; sourceTree = "<group>"; };
+		2635DD7018DAAB5B00AAE60E /* Presto.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Presto.wav; sourceTree = "<group>"; };
+		2635DD7118DAAB5B00AAE60E /* Ripples.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Ripples.wav; sourceTree = "<group>"; };
+		2635DD7218DAAB5B00AAE60E /* Silk.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Silk.wav; sourceTree = "<group>"; };
+		2635DD7318DAAB5B00AAE60E /* Summit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Summit.wav; sourceTree = "<group>"; };
+		2635DD7418DAAB5B00AAE60E /* Waves.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Waves.wav; sourceTree = "<group>"; };
+		2635DD7F18DBBEA200AAE60E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		267B09B118D9821E00370BD1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		267B09B318D99CCC00370BD1 /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
+		267B09B418D99CCC00370BD1 /* Map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Map.m; sourceTree = "<group>"; };
+		267B09B618D99E8D00370BD1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		267B09B818D9A73100370BD1 /* NavCont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavCont.h; sourceTree = "<group>"; };
+		267B09B918D9A73100370BD1 /* NavCont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavCont.m; sourceTree = "<group>"; };
+		26945C3D18E2CAE1002C2B74 /* UIFont+IBCustomFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+IBCustomFonts.m"; sourceTree = "<group>"; };
+		26945C3F18E2CB23002C2B74 /* Lato-Reg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Reg.ttf"; sourceTree = "<group>"; };
+		26945C4018E2CB2F002C2B74 /* Lato-Bol.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bol.ttf"; sourceTree = "<group>"; };
+		26945C4118E2CB2F002C2B74 /* Lato-Lig.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Lig.ttf"; sourceTree = "<group>"; };
+		26945CAB18E37B6B002C2B74 /* sound_366.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_366.mp3; sourceTree = "<group>"; };
+		26945CAD18E37EF4002C2B74 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		26F6EE2A190F6C8000D1193D /* Lobster 1.4.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lobster 1.4.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +151,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26945CAE18E37EF4002C2B74 /* CoreMedia.framework in Frameworks */,
+				2635DD8018DBBEA200AAE60E /* MediaPlayer.framework in Frameworks */,
+				2635DD4918D9B8B200AAE60E /* AVFoundation.framework in Frameworks */,
+				267B09B218D9821E00370BD1 /* CoreLocation.framework in Frameworks */,
+				2601BE9318D947320021E4EE /* libxml2.dylib in Frameworks */,
 				2601B97A18D9241E0021E4EE /* CoreGraphics.framework in Frameworks */,
 				2601B97C18D9241E0021E4EE /* UIKit.framework in Frameworks */,
+				267B09B718D99E8D00370BD1 /* MapKit.framework in Frameworks */,
 				2601B97818D9241E0021E4EE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +179,7 @@
 		2601B96B18D9241D0021E4EE = {
 			isa = PBXGroup;
 			children = (
+				2635DD4618D9B56200AAE60E /* Locations.gpx */,
 				2601B97D18D9241E0021E4EE /* WakeMeUp */,
 				2601B99C18D9241E0021E4EE /* WakeMeUpTests */,
 				2601B97618D9241E0021E4EE /* Frameworks */,
@@ -101,6 +199,12 @@
 		2601B97618D9241E0021E4EE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				26945CAD18E37EF4002C2B74 /* CoreMedia.framework */,
+				2635DD7F18DBBEA200AAE60E /* MediaPlayer.framework */,
+				2635DD4818D9B8B200AAE60E /* AVFoundation.framework */,
+				267B09B618D99E8D00370BD1 /* MapKit.framework */,
+				267B09B118D9821E00370BD1 /* CoreLocation.framework */,
+				2601BE9218D947320021E4EE /* libxml2.dylib */,
 				2601B97718D9241E0021E4EE /* Foundation.framework */,
 				2601B97918D9241E0021E4EE /* CoreGraphics.framework */,
 				2601B97B18D9241E0021E4EE /* UIKit.framework */,
@@ -112,13 +216,29 @@
 		2601B97D18D9241E0021E4EE /* WakeMeUp */ = {
 			isa = PBXGroup;
 			children = (
+				26945CAB18E37B6B002C2B74 /* sound_366.mp3 */,
+				26945C3D18E2CAE1002C2B74 /* UIFont+IBCustomFonts.m */,
+				26945C2418E2C32D002C2B74 /* WakeMeUpMain */,
+				2601BE9118D946930021E4EE /* GDataXMLNode.h */,
+				2601BE9418D947520021E4EE /* GDataXMLNode.m */,
 				2601B98618D9241E0021E4EE /* AppDelegate.h */,
 				2601B98718D9241E0021E4EE /* AppDelegate.m */,
-				2601B98918D9241E0021E4EE /* Main.storyboard */,
 				2601B98C18D9241E0021E4EE /* ViewController.h */,
 				2601B98D18D9241E0021E4EE /* ViewController.m */,
 				2601B98F18D9241E0021E4EE /* Images.xcassets */,
 				2601B97E18D9241E0021E4EE /* Supporting Files */,
+				2601B9AC18D932F50021E4EE /* StopChooser.h */,
+				2601B9AD18D932F50021E4EE /* StopChooser.m */,
+				267B09B318D99CCC00370BD1 /* Map.h */,
+				267B09B418D99CCC00370BD1 /* Map.m */,
+				267B09B818D9A73100370BD1 /* NavCont.h */,
+				267B09B918D9A73100370BD1 /* NavCont.m */,
+				2635DD6518DAA00200AAE60E /* ToneTable.h */,
+				2635DD6618DAA00200AAE60E /* ToneTable.m */,
+				2635DD6818DAA22000AAE60E /* ToneNavController.h */,
+				2635DD6918DAA22000AAE60E /* ToneNavController.m */,
+				261D8ADE190C380C00ED6DF7 /* NSString+NSString_AddressFormat.h */,
+				261D8ADF190C380C00ED6DF7 /* NSString+NSString_AddressFormat.m */,
 			);
 			path = WakeMeUp;
 			sourceTree = "<group>";
@@ -126,6 +246,24 @@
 		2601B97E18D9241E0021E4EE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				261D8AF7190C71F900ED6DF7 /* UIColor+FlatUI.h */,
+				261D8AF8190C71F900ED6DF7 /* UIColor+FlatUI.m */,
+				261D8AF9190C71F900ED6DF7 /* UIImage+FlatUI.h */,
+				261D8AFA190C71F900ED6DF7 /* UIImage+FlatUI.m */,
+				261D8AF4190C71CC00ED6DF7 /* FUISwitch.h */,
+				261D8AF5190C71CC00ED6DF7 /* FUISwitch.m */,
+				261D8AE3190C42AF00ED6DF7 /* UI Re Components */,
+				261D8AE1190C403200ED6DF7 /* Main.storyboard */,
+				2635DD6B18DAAB5B00AAE60E /* Apex.wav */,
+				2635DD6C18DAAB5B00AAE60E /* Bulletin.wav */,
+				2635DD6D18DAAB5B00AAE60E /* Circuit.wav */,
+				2635DD6E18DAAB5B00AAE60E /* Crystals.wav */,
+				2635DD6F18DAAB5B00AAE60E /* Night Owl.wav */,
+				2635DD7018DAAB5B00AAE60E /* Presto.wav */,
+				2635DD7118DAAB5B00AAE60E /* Ripples.wav */,
+				2635DD7218DAAB5B00AAE60E /* Silk.wav */,
+				2635DD7318DAAB5B00AAE60E /* Summit.wav */,
+				2635DD7418DAAB5B00AAE60E /* Waves.wav */,
 				2601B97F18D9241E0021E4EE /* WakeMeUp-Info.plist */,
 				2601B98018D9241E0021E4EE /* InfoPlist.strings */,
 				2601B98318D9241E0021E4EE /* main.m */,
@@ -150,6 +288,32 @@
 				2601B99F18D9241E0021E4EE /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		261D8AE3190C42AF00ED6DF7 /* UI Re Components */ = {
+			isa = PBXGroup;
+			children = (
+				261D8AF2190C6CFF00ED6DF7 /* ButtonHighlight.png */,
+				261D8AE4190C42AF00ED6DF7 /* Chevron@2x.png */,
+				261D8AE5190C42AF00ED6DF7 /* LocationPr@2x.png */,
+				261D8AE6190C42AF00ED6DF7 /* LocationUn@2x.png */,
+				261D8AE7190C42AF00ED6DF7 /* SoundIcon@2x.png */,
+				261D8AE8190C42AF00ED6DF7 /* VibrationIcon@2x.png */,
+				261D8AE9190C42AF00ED6DF7 /* WakeMeUpPr@2x.png */,
+				261D8AEA190C42AF00ED6DF7 /* WakeMeUpUn@2x.png */,
+			);
+			path = "UI Re Components";
+			sourceTree = "<group>";
+		};
+		26945C2418E2C32D002C2B74 /* WakeMeUpMain */ = {
+			isa = PBXGroup;
+			children = (
+				26945C4018E2CB2F002C2B74 /* Lato-Bol.ttf */,
+				26945C4118E2CB2F002C2B74 /* Lato-Lig.ttf */,
+				26945C3F18E2CB23002C2B74 /* Lato-Reg.ttf */,
+				26F6EE2A190F6C8000D1193D /* Lobster 1.4.otf */,
+			);
+			path = WakeMeUpMain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +363,16 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Milo Gosnell";
 				TargetAttributes = {
+					2601B97318D9241E0021E4EE = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					2601B99418D9241E0021E4EE = {
 						TestTargetID = 2601B97318D9241E0021E4EE;
 					};
@@ -228,9 +402,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26945C4218E2CEB7002C2B74 /* Lato-Bol.ttf in Resources */,
+				261D8AEE190C42AF00ED6DF7 /* SoundIcon@2x.png in Resources */,
+				26945C4318E2CEB7002C2B74 /* Lato-Lig.ttf in Resources */,
+				26945C4418E2CEB7002C2B74 /* Lato-Reg.ttf in Resources */,
+				261D8AE2190C403200ED6DF7 /* Main.storyboard in Resources */,
+				261D8AEB190C42AF00ED6DF7 /* Chevron@2x.png in Resources */,
+				261D8AF3190C6CFF00ED6DF7 /* ButtonHighlight.png in Resources */,
+				261D8AEF190C42AF00ED6DF7 /* VibrationIcon@2x.png in Resources */,
+				261D8AEC190C42AF00ED6DF7 /* LocationPr@2x.png in Resources */,
 				2601B99018D9241E0021E4EE /* Images.xcassets in Resources */,
+				261D8AED190C42AF00ED6DF7 /* LocationUn@2x.png in Resources */,
+				2635DD7A18DAAB5B00AAE60E /* Presto.wav in Resources */,
+				2635DD7618DAAB5B00AAE60E /* Bulletin.wav in Resources */,
+				26945CAC18E37B6B002C2B74 /* sound_366.mp3 in Resources */,
+				2635DD7B18DAAB5B00AAE60E /* Ripples.wav in Resources */,
+				2635DD7518DAAB5B00AAE60E /* Apex.wav in Resources */,
+				261D8AF0190C42AF00ED6DF7 /* WakeMeUpPr@2x.png in Resources */,
+				2635DD7918DAAB5B00AAE60E /* Night Owl.wav in Resources */,
 				2601B98218D9241E0021E4EE /* InfoPlist.strings in Resources */,
-				2601B98B18D9241E0021E4EE /* Main.storyboard in Resources */,
+				2635DD7E18DAAB5B00AAE60E /* Waves.wav in Resources */,
+				2635DD7C18DAAB5B00AAE60E /* Silk.wav in Resources */,
+				261D8AF1190C42AF00ED6DF7 /* WakeMeUpUn@2x.png in Resources */,
+				2635DD7D18DAAB5B00AAE60E /* Summit.wav in Resources */,
+				2635DD4718D9B56200AAE60E /* Locations.gpx in Resources */,
+				2635DD7818DAAB5B00AAE60E /* Crystals.wav in Resources */,
+				2635DD7718DAAB5B00AAE60E /* Circuit.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,7 +446,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				267B09B518D99CCC00370BD1 /* Map.m in Sources */,
+				267B09BA18D9A73100370BD1 /* NavCont.m in Sources */,
 				2601B98E18D9241E0021E4EE /* ViewController.m in Sources */,
+				261D8AFB190C71F900ED6DF7 /* UIColor+FlatUI.m in Sources */,
+				26945C3E18E2CAE1002C2B74 /* UIFont+IBCustomFonts.m in Sources */,
+				2635DD6A18DAA22000AAE60E /* ToneNavController.m in Sources */,
+				2601B9AE18D932F50021E4EE /* StopChooser.m in Sources */,
+				261D8AE0190C380C00ED6DF7 /* NSString+NSString_AddressFormat.m in Sources */,
+				261D8AFC190C71F900ED6DF7 /* UIImage+FlatUI.m in Sources */,
+				2635DD6718DAA00200AAE60E /* ToneTable.m in Sources */,
+				261D8AF6190C71CC00ED6DF7 /* FUISwitch.m in Sources */,
+				2601BE9518D947520021E4EE /* GDataXMLNode.m in Sources */,
 				2601B98818D9241E0021E4EE /* AppDelegate.m in Sources */,
 				2601B98418D9241E0021E4EE /* main.m in Sources */,
 			);
@@ -280,14 +488,6 @@
 				2601B98118D9241E0021E4EE /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		2601B98918D9241E0021E4EE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2601B98A18D9241E0021E4EE /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		2601B99F18D9241E0021E4EE /* InfoPlist.strings */ = {
@@ -378,9 +578,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WakeMeUp/WakeMeUp-Prefix.pch";
+				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
 				INFOPLIST_FILE = "WakeMeUp/WakeMeUp-Info.plist";
+				OTHER_CODE_SIGN_FLAGS = "-gta";
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -391,9 +595,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WakeMeUp/WakeMeUp-Prefix.pch";
+				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
 				INFOPLIST_FILE = "WakeMeUp/WakeMeUp-Info.plist";
+				OTHER_CODE_SIGN_FLAGS = "-gta";
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -460,6 +668,7 @@
 				2601B9A818D9241E0021E4EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2601B9A918D9241E0021E4EE /* Build configuration list for PBXNativeTarget "WakeMeUpTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +677,7 @@
 				2601B9AB18D9241E0021E4EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
