@@ -24,20 +24,20 @@
 	<string>1.0</string>
 	<key>IBCustomFonts</key>
 	<dict>
-		<key>Helvetica-Oblique</key>
-		<string>Lobster1.3</string>
 		<key>ArialMT</key>
 		<string>Lato-Bold</string>
 		<key>Helvetica</key>
 		<string>Lato-Regular</string>
 		<key>Helvetica-Light</key>
 		<string>Lato-Light</string>
+		<key>Helvetica-Oblique</key>
+		<string>Lobster1.4</string>
 	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Lobster_1.3.otf</string>
+		<string>Lobster 1.4.otf</string>
 		<string>Lato-Bol.ttf</string>
 		<string>Lato-Lig.ttf</string>
 		<string>Lato-Reg.ttf</string>
@@ -58,8 +58,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>

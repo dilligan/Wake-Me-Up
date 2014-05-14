@@ -16,7 +16,8 @@
 #import <CoreMedia/CoreMedia.h>
 #import "UIColor+FlatUI.h"
 #import "FUISwitch.h"
-@interface ViewController () <UITextFieldDelegate, CLLocationManagerDelegate, UIAlertViewDelegate, MPMediaPickerControllerDelegate>
+#import "DQAlertView.h"
+@interface ViewController () <UITextFieldDelegate, CLLocationManagerDelegate, UIAlertViewDelegate, MPMediaPickerControllerDelegate, DQAlertViewDelegate>
 @property (strong, nonatomic) IBOutlet UILabel *chooseLocLabel;
 @property (strong, nonatomic) IBOutlet UILabel *locLabel;
 - (IBAction)locationChoice:(id)sender;
@@ -43,22 +44,25 @@
     int count;
     BOOL shouldVibrate;
     BOOL shouldSound;
-    float vibrateLength;
+    double vibrateLength;
     MPMusicPlayerController *playa;
     AVQueuePlayer *queuePlayer;
     NSURL *songURL;
-    float soundLength;
-	float prevVol;
+    double soundLength;
+	double prevVol;
     BOOL musicPlaying;
+    BOOL tracking;
+    CGRect frame;
+    MGCreateDark;
+    
 }
-@synthesize stopChooser, vibrateLabel, vibrateTime, songSegment, songTextField, locationField, chooseLocLabel, locLabel, locTypeLabel, topBar, slider, vibSwith, switchBack;
+@synthesize stopChooser, vibrateLabel, vibrateTime, songSegment, songTextField, locationField, chooseLocLabel, locLabel, locTypeLabel, topBar, slider, vibSwith, switchBack, soundLabel;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     stopChooser.delegate = self;
     canPushAlarm = YES;
     count = 0;
-   
     vibrateTime.selectedSegmentIndex = 1;
     songSegment.selectedSegmentIndex = 0;
     songTextField.delegate = self;
@@ -80,6 +84,7 @@
     switchBack.backgroundColor = [UIColor tealColor];
     shouldSound = YES;
     shouldVibrate = YES;
+    frame = CGRectMake(134, 70, 171, 72);
     MPVolumeView *v = [[MPVolumeView alloc] initWithFrame:CGRectMake(400, 600, 100, 30)];
     v.showsRouteButton = NO;
     [self.view addSubview:v];
@@ -88,51 +93,70 @@
 
 
 
-
 -(void)viewWillAppear:(BOOL)animated {
-    NSLog(@"asdad");
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"stopKey"] == nil) {
         stopChooser.placeholder = @"CHOOSE A LOCATION";
         locTypeLabel.hidden = YES;
         locLabel.hidden = YES;
     } else {
-        
         NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:@"stopKey"];
-        stopChooser.text = [dict objectForKey:@"Name"];
-        NSLog(@"%@", dict);
+        
         locLabel.hidden = NO;
         chooseLocLabel.hidden = YES;
         locTypeLabel.text = NO;
-        NSMutableString *locString = [[[dict objectForKey:@"Name"] uppercaseString] mutableCopy];
-        int locIdx = (int)[locString rangeOfString:@"&"].location;
-        [locString insertString:@"\n" atIndex:locIdx];
-        locLabel.text = locString;
+        locLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"stopName"];
+        [locLabel sizeToFit];
+        locLabel.frame = CGRectMake(locLabel.frame.origin.x, locLabel.frame.origin.y, frame.size.width, locLabel.frame.size.height);
+        
         UIFont *light = [UIFont fontWithName:@"Helvetica-Light" size:18];
-        UIFont *bold = [UIFont fontWithName:@"ArialMT" size:18];
+        UIFont *regular = [UIFont fontWithName:@"Helvetica" size:18];
         NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@"BUS | " attributes:@{NSFontAttributeName: light}];
-        NSAttributedString *routeText = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"ROUTE %@", [dict objectForKey:@"Route #"]] attributes:@{NSFontAttributeName: bold}];
+        NSAttributedString *routeText = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"ROUTE %@", [dict objectForKey:@"Route #"]] attributes:@{NSFontAttributeName: regular}];
         [text appendAttributedString:routeText];
         locTypeLabel.attributedText = text;
-
+    }
+    BOOL shouldSong = [[NSUserDefaults standardUserDefaults] boolForKey:@"playSong"];
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"playSound"]) {
         
+        NSMutableAttributedString *soundString = nil;
+        UIFont *light = [UIFont fontWithName:@"Helvetica-Light" size:20];
+        UIFont *reg = [UIFont fontWithName:@"Helvetica" size:20];
+        shouldSound = [[NSUserDefaults standardUserDefaults] boolForKey:@"playSound"];
+        if (shouldSound) {
+            soundString = [[NSMutableAttributedString alloc] initWithString:@"SOUND | " attributes:@{NSFontAttributeName: light}];
+            NSAttributedString *soundText = [[NSAttributedString alloc] initWithString:[[[NSUserDefaults standardUserDefaults] objectForKey:@"soundName"] uppercaseString] attributes:@{NSFontAttributeName: reg}];
+            [soundString appendAttributedString:soundText];
+        }
+        if (shouldSong) {
+            soundString = [[NSMutableAttributedString alloc] initWithString:@"SONG | " attributes:@{NSFontAttributeName: light}];
+            MPMediaQuery *query = [MPMediaQuery songsQuery];
+            MPMediaPropertyPredicate *pred = [MPMediaPropertyPredicate predicateWithValue:[[NSUserDefaults standardUserDefaults] objectForKey:@"songID"] forProperty:MPMediaItemPropertyPersistentID];
+            [query addFilterPredicate:pred];
+            NSString *songName = [[[query items][0] valueForProperty:MPMediaItemPropertyTitle] uppercaseString];
+            NSAttributedString *songText = [[NSAttributedString alloc] initWithString:songName attributes:@{NSFontAttributeName: reg}];
+            [soundString appendAttributedString:songText];
+        }
+        soundLabel.attributedText = soundString;
+    } else {
+        UIFont *light = [UIFont fontWithName:@"Helvetica-Light" size:20];
+        UIFont *reg = [UIFont fontWithName:@"Helvetica" size:20];
+        [[NSUserDefaults standardUserDefaults] setObject:@"Apex" forKey:@"soundName"];
+        [[NSUserDefaults standardUserDefaults] setObject:@1 forKey:@"soundIdx"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"playSound"];
+        NSMutableAttributedString *tempStr = [[NSMutableAttributedString alloc] initWithString:@"SOUND | " attributes:@{NSFontAttributeName: light}];
+        NSAttributedString *soundText = [[NSAttributedString alloc] initWithString:@"APEX" attributes:@{NSFontAttributeName: reg}];
+        [tempStr appendAttributedString:soundText];
+        soundLabel.attributedText = tempStr;
         
     }
-    
-    
-
-        songURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], [[NSUserDefaults standardUserDefaults] objectForKey:@"songCode"]]];
-    
-    AVURLAsset *asset = [AVURLAsset URLAssetWithURL:songURL options:nil];
-    CMTime audDur = asset.duration;
-    soundLength = CMTimeGetSeconds(audDur);
-    
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"songCode"] != nil) {
-        NSString *start = [[NSUserDefaults standardUserDefaults] objectForKey:@"songCode"];
-        start = [start substringToIndex:[start length] - 4];
-        songTextField.text = start;
+    if (shouldSound == NO && shouldSong == NO) {
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"soundIdx"] intValue] == 0) {
+        soundLabel.text = @"NONE";
     }
-    
+    }
     //[ap play];
+    MGSetDark
+    [self.navigationController.view addSubview:darkView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -141,139 +165,93 @@
     // Dispose of any resources that can be recreated.
 }
 
--(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    if (textField == locationField) {
-    UINavigationController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"Nav"];
-    [self presentViewController:vc animated:YES completion:nil];
-    } else {
-        if (songSegment.selectedSegmentIndex == 0) {
-        ToneNavController *t = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ToneNav"];
-        [self presentViewController:t animated:YES completion:nil];
-        } else {
-            MPMediaPickerController *picker = [[MPMediaPickerController alloc] initWithMediaTypes:MPMediaTypeMusic];
-            picker.delegate = self;
-            picker.allowsPickingMultipleItems = NO;
-            picker.prompt = NSLocalizedString(@"Select a song", nil);
-            [picker loadView];
-            [self presentViewController:picker animated:YES completion:nil];
-        }
-        
-    }
-    
-    return NO;
-}
+
 
 - (IBAction)wakeMeUp:(id)sender {
     [self startStandardUpdates];
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"Interval"] == nil) {
-        [[NSUserDefaults standardUserDefaults] setObject:@(0) forKey:@"Interval"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }
     
-    switch ([[[NSUserDefaults standardUserDefaults] objectForKey:@"Interval"] intValue]) {
-        case 0:
-            vibrateLength = 0.5;
-            break;
-        case 1:
-            vibrateLength = 1.0;
-            break;
-        case 2:
-            vibrateLength = 1.5;
-            break;
-        case 3:
-            vibrateLength = 2.0;
-            break;
-        default:
-            break;
-    }
-    
-    
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"nextStops"] != nil) {
+    //if ([[NSUserDefaults standardUserDefaults] objectForKey:@"stopsSelOne"]) {
         
-        NSArray *stops = [[NSUserDefaults standardUserDefaults] objectForKey:@"nextStops"];
-        NSDictionary *first = stops[0];
-        NSDictionary *second = stops[1];
-        NSLog(@"%@ %@", first, second);
-        float lat1, lat2, lon1, lon2;
+        NSArray *first = [[NSUserDefaults standardUserDefaults] objectForKey:@"stopSelOne"];
+        NSArray *second = [[NSUserDefaults standardUserDefaults] objectForKey:@"stopSelTwo"];
+    
+        NSInteger index = [[[NSUserDefaults standardUserDefaults] objectForKey:@"stopAlertIdx"] integerValue] - 1;
         
-        if ([stops[0] allKeys].count > 0 && [stops[1] allKeys].count > 0) {
+        double lat1, lat2, lon1, lon2;
+        NSDictionary *firstStop;
+        NSDictionary *secondStop;
+        
+        @try {
+            firstStop = first[index];
+        }
+        @catch (NSException *exception) {
+            if (first.count > 0) {
+                firstStop = [first lastObject];
+            } else {
+                firstStop = [NSDictionary dictionary];
+            }
+        }
+        @finally {}
+        
+        @try {
+            secondStop = second[index];
+        }
+        @catch (NSException *exception) {
+            if (second.count > 0) {
+                secondStop = [second lastObject];
+            } else {
+                secondStop = [NSDictionary dictionary];
+            }
+        }
+        @finally {}
+    
+        NSLog(@"%d %@ %@", index, firstStop, secondStop);
+
+    
+        if ([firstStop allKeys].count > 0 && [secondStop allKeys].count > 0) {
             
-            lat1 = [[stops[0] objectForKey:@"Lat"] floatValue];
-            lon1 = [[stops[0] objectForKey:@"Lon"] floatValue];
+            lat1 = [[firstStop objectForKey:@"Lat"] doubleValue];
+            lon1 = [[firstStop objectForKey:@"Lon"] doubleValue];
             region1 = [[CLCircularRegion alloc] initWithCenter:CLLocationCoordinate2DMake(lat1, lon1) radius:100 identifier:@"stop1"];
-            lat2 = [[stops[1] objectForKey:@"Lat"] floatValue];
-            lon2 = [[stops[1] objectForKey:@"Lon"] floatValue];
+            lat2 = [[secondStop objectForKey:@"Lat"] doubleValue];
+            lon2 = [[secondStop objectForKey:@"Lon"] doubleValue];
             region2 = [[CLCircularRegion alloc] initWithCenter:CLLocationCoordinate2DMake(lat2, lon2) radius:100 identifier:@"stop2"];
             
-        } else if ([stops[0] allKeys].count > 0 && [stops[1] allKeys].count == 0) {
-            lat1 = [[stops[0] objectForKey:@"Lat"] floatValue];
-            lon1 = [[stops[0] objectForKey:@"Lon"] floatValue];
+        } else if ([firstStop allKeys].count > 0 && [secondStop allKeys].count == 0) {
+            lat1 = [[firstStop objectForKey:@"Lat"] doubleValue];
+            lon1 = [[firstStop objectForKey:@"Lon"] doubleValue];
             region1 = [[CLCircularRegion alloc] initWithCenter:CLLocationCoordinate2DMake(lat1, lon1) radius:100 identifier:@"stop1"];
             lat2 = 0.0;
             lon2 = 0.0;
-        region2 = [[CLCircularRegion alloc] initWithCenter:CLLocationCoordinate2DMake(lat2, lon2) radius:100 identifier:@"stop2"];
-    } else {
-        lat1 = 0.0;
-        lon1 = 0.0;
-        region1 = [[CLCircularRegion alloc] initWithCenter:CLLocationCoordinate2DMake(lat1, lon1) radius:100 identifier:@"stop1"];
-        lat2 = [[stops[1] objectForKey:@"Lat"] floatValue];
-        lon2 = [[stops[1] objectForKey:@"Lon"] floatValue];
-        region2 = [[CLCircularRegion alloc] initWithCenter:CLLocationCoordinate2DMake(lat2, lon2) radius:100 identifier:@"stop2"];
-    }
-        NSLog(@"%f %f %f %f", lat1, lon1, lat2, lon2);
-    }
+            region2 = [[CLCircularRegion alloc] initWithCenter:CLLocationCoordinate2DMake(lat2, lon2) radius:100 identifier:@"stop2"];
+        } else {
+            lat1 = 0.0;
+            lon1 = 0.0;
+            region1 = [[CLCircularRegion alloc] initWithCenter:CLLocationCoordinate2DMake(lat1, lon1) radius:100 identifier:@"stop1"];
+            lat2 = [[secondStop objectForKey:@"Lat"] doubleValue];
+            lon2 = [[secondStop objectForKey:@"Lon"] doubleValue];
+            region2 = [[CLCircularRegion alloc] initWithCenter:CLLocationCoordinate2DMake(lat2, lon2) radius:100 identifier:@"stop2"];
+        }
+    //}
     
-    float lat3 = [[[[NSUserDefaults standardUserDefaults] objectForKey:@"stopKey"] objectForKey:@"lat"] floatValue];
-    float lon3 = [[[[NSUserDefaults standardUserDefaults] objectForKey:@"stopKey"] objectForKey:@"lon"] floatValue];
+    double lat3 = [[[[NSUserDefaults standardUserDefaults] objectForKey:@"stopKey"] objectForKey:@"lat"] doubleValue];
+    double lon3 = [[[[NSUserDefaults standardUserDefaults] objectForKey:@"stopKey"] objectForKey:@"lon"] doubleValue];
     region3 = [[CLCircularRegion alloc] initWithCenter:CLLocationCoordinate2DMake(lat3, lon3) radius:80 identifier:@"stop3"];
     
-    [[[UIAlertView alloc] initWithTitle:@"Alarm Set!" message:@"We'll wake you up when you get close to your stop." delegate:nil cancelButtonTitle:@"Ok!" otherButtonTitles:nil] show];
-}
-
-
-
-- (IBAction)vibrateSwitched:(id)sender {
-    if ([sender isOn]) {
-        vibrateTime.hidden = NO;
-        vibrateLabel.hidden = NO;
-        shouldVibrate = YES;
-    }
-    else {
-        vibrateLabel.hidden = YES;
-        vibrateTime.hidden = YES;
-        shouldVibrate = NO;
-    }
-}
-
-- (IBAction)soundSwitched:(id)sender {
-    if ([sender isOn]) {
-        songSegment.hidden = NO;
-        songTextField.hidden = NO;
-        shouldSound = YES;
-    }
-    else {
-        songSegment.hidden = YES;
-        songTextField.hidden = YES;
-        shouldSound = NO;
-    }
-}
-
-
--(void)mediaPicker:(MPMediaPickerController *)mediaPicker didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection {
-    [self dismissViewControllerAnimated:YES completion:nil];
-    playa = [MPMusicPlayerController iPodMusicPlayer];
-    [playa setQueueWithItemCollection:mediaItemCollection];
+ 
+    MGAlert(@"ALARM SET!", @"WE'LL WAKE YOU UP WHEN YOU GET CLOSE TO YOUR STOP")
     
-    NSArray *music = [mediaItemCollection items];
-    MPMediaItem *song = music[0];
-    NSString *songName = [song valueForProperty:MPMediaItemPropertyTitle];
-    songTextField.text = songName;
+
+    tracking = YES;
+}
+
+
+-(void)DQAlertViewCancelButtonClicked {
+
+    MGHideDark
     
 }
 
--(void)mediaPickerDidCancel:(MPMediaPickerController *)mediaPicker {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 - (IBAction)vibSwitchChanged:(id)sender {
     
@@ -293,10 +271,17 @@
     locationManager.activityType = CLActivityTypeAutomotiveNavigation;
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
-    locationManager.distanceFilter = 2;
+    locationManager.distanceFilter = 100;
     [locationManager startUpdatingLocation];
     canPushAlarm = YES;
-    ap = [[AVAudioPlayer alloc] initWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"Apex" withExtension:@"wav"] error:nil];
+    NSString *soundName;
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"soundName"] == nil) {
+        soundName = @"Apex";
+    } else {
+        soundName = [[NSUserDefaults standardUserDefaults] objectForKey:@"soundName"];
+    }
+    
+    ap = [[AVAudioPlayer alloc] initWithContentsOfURL:[[NSBundle mainBundle] URLForResource:soundName withExtension:@"mp3"] error:nil];
     ap.numberOfLoops = -1;
     [ap setVolume:1.0];
     [ap prepareToPlay];
@@ -309,66 +294,84 @@
     CLLocation *location = [locations lastObject];
     CLLocationCoordinate2D coord = location.coordinate;
     
-    //if ([region1 containsCoordinate:coord] || [region2 containsCoordinate:coord] || [region3 containsCoordinate:coord]) {
+    if ([region1 containsCoordinate:coord] || [region2 containsCoordinate:coord] || [region3 containsCoordinate:coord]) {
     count++;
-   if (count > 3) {
-       [[AVAudioSession sharedInstance] setActive:YES error:nil];
-       [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback withOptions:AVAudioSessionCategoryOptionDuckOthers error:nil];
+    //if (count > 3) {
+        
+        
+        if (canPushAlarm == YES) {
+            [[AVAudioSession sharedInstance] setActive:YES error:nil];
+            [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback withOptions:AVAudioSessionCategoryOptionMixWithOthers error:nil];
+            //[[[UIAlertView alloc] initWithTitle:@"Wake up!" message:@"You are getting close to your stop!" delegate:self cancelButtonTitle:@"Ok!" otherButtonTitles:nil] show];
+            MGAlert(@"WAKE UP!", @"YOU ARE GETTING CLOSE TO YOUR STOP!");
+            alert.cancelButtonAction = ^{
+                [self stopTimer];
+            };
+            prevVol = [[MPMusicPlayerController applicationMusicPlayer] volume];
+            musicPlaying = ([[MPMusicPlayerController iPodMusicPlayer] playbackState] == MPMusicPlaybackStatePlaying) ? YES : NO;
+            [[MPMusicPlayerController iPodMusicPlayer] pause];
+            
 
-       if (canPushAlarm == YES) {
-            [[[UIAlertView alloc] initWithTitle:@"Wake up!" message:@"You are getting close to your stop!" delegate:self cancelButtonTitle:@"Ok!" otherButtonTitles:nil] show];
-           musicPlaying = ([[MPMusicPlayerController iPodMusicPlayer] playbackState] == MPMusicPlaybackStatePlaying) ? YES : NO;
-           
-           if (musicPlaying) {
-           [[MPMusicPlayerController iPodMusicPlayer] pause];
-           prevVol = [[MPMusicPlayerController applicationMusicPlayer] volume];
-           }
-           else
-           prevVol = [[MPMusicPlayerController iPodMusicPlayer] volume];
-
-           
-           [[MPMusicPlayerController applicationMusicPlayer] setVolume:0.7];
-           
+            
+            double volume = ([[NSUserDefaults standardUserDefaults] objectForKey:@"volume"] == nil) ? 0.5 : [[[NSUserDefaults standardUserDefaults] objectForKey:@"volume"] doubleValue];
+            [[MPMusicPlayerController applicationMusicPlayer] setVolume:volume];
+            
+            
             UILocalNotification *not = [[UILocalNotification alloc] init];
             not.fireDate = [NSDate dateWithTimeIntervalSinceNow:0];
             not.alertAction = @"Stop Alarm";
             not.alertBody = @"Wake up! Your stop's coming up!";
             [[UIApplication sharedApplication] scheduleLocalNotification:not];
-            if (shouldSound == YES && shouldVibrate == YES) {
-                
-                soundTimer = [NSTimer scheduledTimerWithTimeInterval:soundLength target:self selector:@selector(sound) userInfo:nil repeats:YES];
-                [soundTimer fire];
-                vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:vibrateLength target:self selector:@selector(vibrate) userInfo:nil repeats:YES];
-                [vibrateTimer fire];
-                
-            } else if (shouldSound == YES && shouldVibrate == NO) {
-                
-                soundTimer = [NSTimer scheduledTimerWithTimeInterval:soundLength target:self selector:@selector(sound) userInfo:nil repeats:YES];
-                [soundTimer fire];
-                
-            } else if (shouldVibrate == YES && shouldSound == NO) {
-                
-            vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:vibrateLength target:self selector:@selector(vibrate) userInfo:nil repeats:YES];
-            [vibrateTimer fire];
-                
+            
+            BOOL shouldSong = [[NSUserDefaults standardUserDefaults] boolForKey:@"playSong"];
+            
+            shouldSound = [[NSUserDefaults standardUserDefaults] boolForKey:@"playSound"];
+            shouldVibrate = (vibSwith.on) ? YES : NO;
+            
+            if (shouldSound) {
+                [ap play];
+            } else if (shouldSong) {
+                @try {
+                    playa = [MPMusicPlayerController applicationMusicPlayer];
+                    //[playa setVolume:volume];
+                MPMediaQuery *query = [MPMediaQuery songsQuery];
+                MPMediaPropertyPredicate *pred = [MPMediaPropertyPredicate predicateWithValue:[[NSUserDefaults standardUserDefaults] objectForKey:@"songID"] forProperty:MPMediaItemPropertyPersistentID];
+                [query addFilterPredicate:pred];
+                NSArray *mediaItems = [query items];
+                MPMediaItemCollection *col = [[MPMediaItemCollection alloc] initWithItems:mediaItems];
+                [playa setQueueWithItemCollection:col];
+                [playa setCurrentPlaybackTime:60];
+                [playa play];
+                }                @catch (NSException *exception) {
+                }
+                @finally {
+                }
             }
-           [ap play];
+            if (shouldVibrate) {
+                vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.45 target:self selector:@selector(vibrate) userInfo:nil repeats:YES];
+                [vibrateTimer fire];
+            }
+            
         }
         canPushAlarm = NO;
-       
+        
     }
     //}
     //[self log];
 }
+
 
 -(void)stopTimer {
     [vibrateTimer invalidate];
     [soundTimer invalidate];
     [ap stop];
     [playa stop];
+    [playa setQueueWithItemCollection:nil];
     [locationManager stopUpdatingLocation];
     count = 0;
+    tracking = NO;
     [[MPMusicPlayerController applicationMusicPlayer] setVolume:prevVol];
+    //[[AVAudioSession sharedInstance] setActive:NO error:nil];
     if (musicPlaying)
     [[MPMusicPlayerController iPodMusicPlayer] play];
 }
@@ -385,7 +388,7 @@
 
 - (IBAction)chooseSound:(id)sender {
     [self textFieldShouldBeginEditing:songTextField];
-
+    
 }
 
 
@@ -402,14 +405,11 @@
     return NO;
 }
 
--(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    [self stopTimer];
-
-}
 
 
 - (IBAction)locationChoice:(id)sender {
-    [self textFieldShouldBeginEditing:locationField];
+    [self presentViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"Nav"] animated:YES completion:nil];
+    
 }
 
 

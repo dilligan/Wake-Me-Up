@@ -19,11 +19,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    NSLog(@"%@", stopData);
-    
-    float lat = [[stopData objectForKey:@"Lat"] floatValue];
-    float lon = [[stopData objectForKey:@"Lon"] floatValue];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];    
+    double lat = [[stopData objectForKey:@"Lat"] doubleValue];
+    double lon = [[stopData objectForKey:@"Lon"] doubleValue];
     CLLocationCoordinate2D stopC = CLLocationCoordinate2DMake(lat, lon);
     
     mapView.region = MKCoordinateRegionMake(stopC, MKCoordinateSpanMake(0.01, 0.01));

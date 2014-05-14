@@ -1,0 +1,1932 @@
+[
+  {
+    "routeName" : "Lakewood\/Tacoma",
+    "routeNum" : "3",
+    "routeID" : "3_3"
+  },
+  {
+    "routeName" : "Puyallup\/72nd",
+    "routeNum" : "409",
+    "routeID" : "3_409"
+  },
+  {
+    "routeName" : "Bridgeport\/S. 19th ST.",
+    "routeNum" : "2",
+    "routeID" : "3_2"
+  },
+  {
+    "routeName" : "6th Ave \/ Pacific Ave",
+    "routeNum" : "1",
+    "routeID" : "3_1"
+  },
+  {
+    "routeName" : "Puyallup\/DowntownTacoma",
+    "routeNum" : "400",
+    "routeID" : "3_400"
+  },
+  {
+    "routeName" : "Meridian\/Federal Way",
+    "routeNum" : "402",
+    "routeID" : "3_402"
+  },
+  {
+    "routeName" : "72nd Street",
+    "routeNum" : "202",
+    "routeID" : "3_202"
+  },
+  {
+    "routeName" : "Lakewood\/Parkland",
+    "routeNum" : "204",
+    "routeID" : "3_204"
+  },
+  {
+    "routeName" : "Pacific Hwy\/Tillicum\/Ft. Lewis",
+    "routeNum" : "206",
+    "routeID" : "3_206"
+  },
+  {
+    "routeName" : "112th St",
+    "routeNum" : "410",
+    "routeID" : "3_410"
+  },
+  {
+    "routeName" : "Steilacoom",
+    "routeNum" : "212",
+    "routeID" : "3_212"
+  },
+  {
+    "routeName" : "Washington",
+    "routeNum" : "214",
+    "routeID" : "3_214"
+  },
+  {
+    "routeName" : "S Tacoma Way",
+    "routeNum" : "300",
+    "routeID" : "3_300"
+  },
+  {
+    "routeName" : "West Seattle- Bellevue Exp",
+    "routeNum" : "560",
+    "routeID" : "3_560"
+  },
+  {
+    "routeName" : "Fife to Puyallup connector",
+    "routeNum" : "503",
+    "routeID" : "3_503"
+  },
+  {
+    "routeName" : "Milton edgewood",
+    "routeNum" : "504",
+    "routeID" : "3_504"
+  },
+  {
+    "routeName" : "Milton-Federal Way",
+    "routeNum" : "501",
+    "routeID" : "3_501"
+  },
+  {
+    "routeName" : "Federal Way",
+    "routeNum" : "500",
+    "routeID" : "3_500"
+  },
+  {
+    "routeName" : "S 12TH ST",
+    "routeNum" : "28",
+    "routeID" : "3_28"
+  },
+  {
+    "routeName" : "McKinley Ave",
+    "routeNum" : "42",
+    "routeID" : "3_42"
+  },
+  {
+    "routeName" : "Portland Ave",
+    "routeNum" : "41",
+    "routeID" : "3_41"
+  },
+  {
+    "routeName" : "Pearl Street",
+    "routeNum" : "10",
+    "routeID" : "3_10"
+  },
+  {
+    "routeName" : "UPS- TCC",
+    "routeNum" : "16",
+    "routeID" : "3_16"
+  },
+  {
+    "routeName" : "N. 30th Street",
+    "routeNum" : "13",
+    "routeID" : "3_13"
+  },
+  {
+    "routeName" : "N.Proctor District",
+    "routeNum" : "14",
+    "routeID" : "3_14"
+  },
+  {
+    "routeName" : "Pt. Defiance",
+    "routeNum" : "11",
+    "routeID" : "3_11"
+  },
+  {
+    "routeName" : "Union Ave",
+    "routeNum" : "51",
+    "routeID" : "3_51"
+  },
+  {
+    "routeName" : "TCC Tac Mall",
+    "routeNum" : "52",
+    "routeID" : "3_52"
+  },
+  {
+    "routeName" : "University Place",
+    "routeNum" : "53",
+    "routeID" : "3_53"
+  },
+  {
+    "routeName" : "38th St",
+    "routeNum" : "54",
+    "routeID" : "3_54"
+  },
+  {
+    "routeName" : "Sheridan M St",
+    "routeNum" : "48",
+    "routeID" : "3_48"
+  },
+  {
+    "routeName" : "Yakima",
+    "routeNum" : "45",
+    "routeID" : "3_45"
+  },
+  {
+    "routeName" : "N.E Tacoma",
+    "routeNum" : "62",
+    "routeID" : "3_62"
+  },
+  {
+    "routeName" : "Tacoma Mall",
+    "routeNum" : "57",
+    "routeID" : "3_57"
+  },
+  {
+    "routeName" : "56th St",
+    "routeNum" : "56",
+    "routeID" : "3_56"
+  },
+  {
+    "routeName" : "Parkland Tac Mall",
+    "routeNum" : "55",
+    "routeID" : "3_55"
+  },
+  {
+    "routeName" : "UPS-Olympia",
+    "routeNum" : "475",
+    "routeID" : "3_475"
+  },
+  {
+    "routeName" : "Benaroya-Olympia",
+    "routeNum" : "485",
+    "routeID" : "3_485"
+  },
+  {
+    "routeName" : "South Hill Mall\/Puyallup Sounder",
+    "routeNum" : "495",
+    "routeID" : "3_495"
+  },
+  {
+    "routeName" : "Lakeland Hill connector",
+    "routeNum" : "497",
+    "routeID" : "3_497"
+  },
+  {
+    "routeName" : "Purdy Gig Harbor Tacoma Express",
+    "routeNum" : "102",
+    "routeID" : "3_102"
+  },
+  {
+    "routeName" : "Purdy Gig Harbor TCC",
+    "routeNum" : "100",
+    "routeID" : "3_100"
+  },
+  {
+    "routeName" : "kinnear",
+    "routeNum" : "1",
+    "routeID" : "1_1"
+  },
+  {
+    "routeName" : "GGreen River Coll-Kent P&R Via Lk. Meridian P&R",
+    "routeNum" : "164",
+    "routeID" : "1_164"
+  },
+  {
+    "routeName" : "Lk Meridian - Seattle",
+    "routeNum" : "161",
+    "routeID" : "1_161"
+  },
+  {
+    "routeName" : "Route 3",
+    "routeNum" : "3",
+    "routeID" : "1_3"
+  },
+  {
+    "routeName" : "Route 2",
+    "routeNum" : "2",
+    "routeID" : "1_2"
+  },
+  {
+    "routeName" : "Greenwood\/SCC\/Northgate",
+    "routeNum" : "5",
+    "routeID" : "1_5"
+  },
+  {
+    "routeName" : "Judkins \/ E QA",
+    "routeNum" : "4",
+    "routeID" : "1_4"
+  },
+  {
+    "routeName" : "Route 7",
+    "routeNum" : "7",
+    "routeID" : "1_7"
+  },
+  {
+    "routeName" : "broadway  \/  rainier",
+    "routeNum" : "9",
+    "routeID" : "1_9"
+  },
+  {
+    "routeName" : "Cap.Hill\/Denny Wy",
+    "routeNum" : "8",
+    "routeID" : "1_8"
+  },
+  {
+    "routeName" : "C-Line Rapid Ride",
+    "routeNum" : "C Line",
+    "routeID" : "1_C Line"
+  },
+  {
+    "routeName" : "Island Crest Wy\/S Mercer Shuttle",
+    "routeNum" : "204",
+    "routeID" : "1_204"
+  },
+  {
+    "routeName" : "Mercer Island\/U district",
+    "routeNum" : "205",
+    "routeID" : "1_205"
+  },
+  {
+    "routeName" : "Mercer Island",
+    "routeNum" : "202",
+    "routeID" : "1_202"
+  },
+  {
+    "routeName" : "Shorewood Van Shuttle",
+    "routeNum" : "203",
+    "routeID" : "1_203"
+  },
+  {
+    "routeName" : "Kingsgate\/Redmond\/Bear Crk Shuttle",
+    "routeNum" : "930",
+    "routeID" : "1_930"
+  },
+  {
+    "routeName" : "Issaquah Shuttle",
+    "routeNum" : "200",
+    "routeID" : "1_200"
+  },
+  {
+    "routeName" : "West Mercer Way Shuttle",
+    "routeNum" : "201",
+    "routeID" : "1_201"
+  },
+  {
+    "routeName" : "Redmond\/Woodinville",
+    "routeNum" : "931",
+    "routeID" : "1_931"
+  },
+  {
+    "routeName" : "Kenmore\/Finn Hill\/Kingsgate P&R",
+    "routeNum" : "935",
+    "routeID" : "1_935"
+  },
+  {
+    "routeName" : "Renton to Kent Via Benson",
+    "routeNum" : "169",
+    "routeID" : "1_169"
+  },
+  {
+    "routeName" : "Renton\/Shoreline via Bell.&Bothell. for 2002",
+    "routeNum" : "342",
+    "routeID" : "1_342"
+  },
+  {
+    "routeName" : "Timberlane - Kent Rail Station",
+    "routeNum" : "168",
+    "routeID" : "1_168"
+  },
+  {
+    "routeName" : "IssaTC\/SnoqRidge\/NBend-Sept2013",
+    "routeNum" : "208",
+    "routeID" : "1_208"
+  },
+  {
+    "routeName" : "NTC - Mountlake Terrace",
+    "routeNum" : "347",
+    "routeID" : "1_347"
+  },
+  {
+    "routeName" : "Auburn-Kent-Renton-Univ Dist",
+    "routeNum" : "167",
+    "routeID" : "1_167"
+  },
+  {
+    "routeName" : "Issaquah\/North Bend Shuttle",
+    "routeNum" : "209",
+    "routeID" : "1_209"
+  },
+  {
+    "routeName" : "NTC - Richmond Beach",
+    "routeNum" : "348",
+    "routeID" : "1_348"
+  },
+  {
+    "routeName" : "Highline C C to Kent P&R",
+    "routeNum" : "166",
+    "routeID" : "1_166"
+  },
+  {
+    "routeName" : "NTC - SCC",
+    "routeNum" : "345",
+    "routeID" : "1_345"
+  },
+  {
+    "routeName" : "Aurora Village - NTC",
+    "routeNum" : "346",
+    "routeID" : "1_346"
+  },
+  {
+    "routeName" : "Kent-Southcenter to C.B.D. & Tunnel",
+    "routeNum" : "150",
+    "routeID" : "1_150"
+  },
+  {
+    "routeName" : "Group Health Coop - CBD",
+    "routeNum" : "601",
+    "routeID" : "1_601"
+  },
+  {
+    "routeName" : "Enumclaw-Auburn-Star Lk. I-5 to C.B.D.",
+    "routeNum" : "152",
+    "routeID" : "1_152"
+  },
+  {
+    "routeName" : "Kent\/Renton Shuttle",
+    "routeNum" : "153",
+    "routeID" : "1_153"
+  },
+  {
+    "routeName" : "Lake City - Shoreline CC",
+    "routeNum" : "330",
+    "routeID" : "1_330"
+  },
+  {
+    "routeName" : "Kent-Kangley-Timberlane--I-5-Seneca St.",
+    "routeNum" : "159",
+    "routeID" : "1_159"
+  },
+  {
+    "routeName" : "S03: Kenmore - SCC",
+    "routeNum" : "331",
+    "routeID" : "1_331"
+  },
+  {
+    "routeName" : "E. Kent--Lk. Meridian Via I-5 & Seneca St. -C.B.D.",
+    "routeNum" : "158",
+    "routeID" : "1_158"
+  },
+  {
+    "routeName" : "Tukwila Station  - Federal Center S.",
+    "routeNum" : "154",
+    "routeID" : "1_154"
+  },
+  {
+    "routeName" : "Lake Meridian PR - Seattle",
+    "routeNum" : "157",
+    "routeID" : "1_157"
+  },
+  {
+    "routeName" : "SeaTac - Southcenter",
+    "routeNum" : "156",
+    "routeID" : "1_156"
+  },
+  {
+    "routeName" : "Green River CC\/Auburn\/Federal Way",
+    "routeNum" : "181",
+    "routeID" : "1_181"
+  },
+  {
+    "routeName" : "Federal Way-NE Tacoma",
+    "routeNum" : "182",
+    "routeID" : "1_182"
+  },
+  {
+    "routeName" : "Auburn  Kent  SeaTac  Burien",
+    "routeNum" : "180",
+    "routeID" : "1_180"
+  },
+  {
+    "routeName" : "Auburn\/Enumclaw Shuttle",
+    "routeNum" : "186",
+    "routeID" : "1_186"
+  },
+  {
+    "routeName" : "Highlands\/Kennydale DART",
+    "routeNum" : "909",
+    "routeID" : "1_909"
+  },
+  {
+    "routeName" : "Kent\/Federal Way Shuttle",
+    "routeNum" : "183",
+    "routeID" : "1_183"
+  },
+  {
+    "routeName" : "Renton Highlands DART",
+    "routeNum" : "908",
+    "routeID" : "1_908"
+  },
+  {
+    "routeName" : "Black Diamond-Maple Valley-Renton TC",
+    "routeNum" : "907",
+    "routeID" : "1_907"
+  },
+  {
+    "routeName" : "Eastgate\\Redmond",
+    "routeNum" : "221",
+    "routeID" : "1_221"
+  },
+  {
+    "routeName" : "BTC Crossroads Eastgate Fall 11",
+    "routeNum" : "226",
+    "routeID" : "1_226"
+  },
+  {
+    "routeName" : "Fall City Redmond Shuttle",
+    "routeNum" : "224",
+    "routeID" : "1_224"
+  },
+  {
+    "routeName" : "Kent Shuttle (DART)",
+    "routeNum" : "916",
+    "routeID" : "1_916"
+  },
+  {
+    "routeName" : "Auburn\/Algona\/Pacific Shuttle",
+    "routeNum" : "917",
+    "routeID" : "1_917"
+  },
+  {
+    "routeName" : "Kent Shopper Shuttle (DART)",
+    "routeNum" : "914",
+    "routeID" : "1_914"
+  },
+  {
+    "routeName" : "Federal Way\/Twin Lakes",
+    "routeNum" : "187",
+    "routeID" : "1_187"
+  },
+  {
+    "routeName" : "Auburn\/Enumclaw Shuttle - old",
+    "routeNum" : "915",
+    "routeID" : "1_915"
+  },
+  {
+    "routeName" : "Kent - Riverview",
+    "routeNum" : "913",
+    "routeID" : "1_913"
+  },
+  {
+    "routeName" : "Supermall - North Auburn",
+    "routeNum" : "910",
+    "routeID" : "1_910"
+  },
+  {
+    "routeName" : "North and Southeast Auburn",
+    "routeNum" : "919",
+    "routeID" : "1_919"
+  },
+  {
+    "routeName" : "Federal Way to E Marginal Wy & Boeing",
+    "routeNum" : "173",
+    "routeID" : "1_173"
+  },
+  {
+    "routeName" : "Issaquah",
+    "routeNum" : "210",
+    "routeID" : "1_210"
+  },
+  {
+    "routeName" : "Cougar Mt\/NewportHS\/IntlHS 823",
+    "routeNum" : "823",
+    "routeID" : "1_823"
+  },
+  {
+    "routeName" : "Issa Hlnds PR\\Eastgate\\First Hill 911",
+    "routeNum" : "211",
+    "routeID" : "1_211"
+  },
+  {
+    "routeName" : "Newcastle\/Factoria\/International School 824",
+    "routeNum" : "824",
+    "routeID" : "1_824"
+  },
+  {
+    "routeName" : "Eastgate P & R Express (Tunnel)",
+    "routeNum" : "212",
+    "routeID" : "1_212"
+  },
+  {
+    "routeName" : "Meridian Park express",
+    "routeNum" : "316",
+    "routeID" : "1_316"
+  },
+  {
+    "routeName" : "Covenant Shores Van Shuttle",
+    "routeNum" : "213",
+    "routeID" : "1_213"
+  },
+  {
+    "routeName" : "Seattle - Issaquah 908",
+    "routeNum" : "214",
+    "routeID" : "1_214"
+  },
+  {
+    "routeName" : "N Bend  Seattle",
+    "routeNum" : "215",
+    "routeID" : "1_215"
+  },
+  {
+    "routeName" : "Sammamish\/CBD",
+    "routeNum" : "216",
+    "routeID" : "1_216"
+  },
+  {
+    "routeName" : "Woodinville\/Bothell Express route",
+    "routeNum" : "312",
+    "routeID" : "1_312"
+  },
+  {
+    "routeName" : "Federal Way P&R Via I-5 --Tunnel",
+    "routeNum" : "177",
+    "routeID" : "1_177"
+  },
+  {
+    "routeName" : "Issaquah\/CBD",
+    "routeNum" : "217",
+    "routeID" : "1_217"
+  },
+  {
+    "routeName" : "Issaquah Highlands CBD",
+    "routeNum" : "218",
+    "routeID" : "1_218"
+  },
+  {
+    "routeName" : "Twin Lakes P&R - Downtown",
+    "routeNum" : "179",
+    "routeID" : "1_179"
+  },
+  {
+    "routeName" : "913 Seattle Issa Hlnds Sammamish",
+    "routeNum" : "219",
+    "routeID" : "1_219"
+  },
+  {
+    "routeName" : "Issaquah DART",
+    "routeNum" : "927",
+    "routeID" : "1_927"
+  },
+  {
+    "routeName" : "South Fed Way & Fed P&R",
+    "routeNum" : "178",
+    "routeID" : "1_178"
+  },
+  {
+    "routeName" : "Seattle\/Woodinville",
+    "routeNum" : "311",
+    "routeID" : "1_311"
+  },
+  {
+    "routeName" : "Burien to Seattle via Ambaum & Delridge",
+    "routeNum" : "120",
+    "routeID" : "1_120"
+  },
+  {
+    "routeName" : "West Seattle-White Center to SouthCenter",
+    "routeNum" : "128",
+    "routeID" : "1_128"
+  },
+  {
+    "routeName" : "Westwood to CBD via SSCC",
+    "routeNum" : "125",
+    "routeID" : "1_125"
+  },
+  {
+    "routeName" : "Gregory Heights express",
+    "routeNum" : "123",
+    "routeID" : "1_123"
+  },
+  {
+    "routeName" : "Richmond Beach via Dayton",
+    "routeNum" : "304",
+    "routeID" : "1_304"
+  },
+  {
+    "routeName" : "Tukwila - E Marginal - CBD",
+    "routeNum" : "124",
+    "routeID" : "1_124"
+  },
+  {
+    "routeName" : "Shoreline - NTC - First Hill",
+    "routeNum" : "303",
+    "routeID" : "1_303"
+  },
+  {
+    "routeName" : "Normandy Park express",
+    "routeNum" : "121",
+    "routeID" : "1_121"
+  },
+  {
+    "routeName" : "Aurora Village-Downtown Seattle",
+    "routeNum" : "301",
+    "routeID" : "1_301"
+  },
+  {
+    "routeName" : "Des moines express",
+    "routeNum" : "122",
+    "routeID" : "1_122"
+  },
+  {
+    "routeName" : "Aurora Village Via Lake Forest Park",
+    "routeNum" : "308",
+    "routeID" : "1_308"
+  },
+  {
+    "routeName" : "Kenmore tunnel route",
+    "routeNum" : "306",
+    "routeID" : "1_306"
+  },
+  {
+    "routeName" : "Kenmore - S Lk Union - First Hill",
+    "routeNum" : "309",
+    "routeID" : "1_309"
+  },
+  {
+    "routeName" : "Renton Highlands to C.D.B. Via I-405 & I-90",
+    "routeNum" : "114",
+    "routeID" : "1_114"
+  },
+  {
+    "routeName" : "Lakeside School Custom Bus",
+    "routeNum" : "988",
+    "routeID" : "1_988"
+  },
+  {
+    "routeName" : "Lakeside School-Rainier Beach",
+    "routeNum" : "987",
+    "routeID" : "1_987"
+  },
+  {
+    "routeName" : "Fauntleroy Ferry Dock ONLY",
+    "routeNum" : "116",
+    "routeID" : "1_116"
+  },
+  {
+    "routeName" : "Eastgate Lakeside",
+    "routeNum" : "989",
+    "routeID" : "1_989"
+  },
+  {
+    "routeName" : "Renton Shuttle",
+    "routeNum" : "110",
+    "routeID" : "1_110"
+  },
+  {
+    "routeName" : "East Renton to C.B.D. Via I-405 & I-90",
+    "routeNum" : "111",
+    "routeID" : "1_111"
+  },
+  {
+    "routeName" : "Shorewood  White Center  CBD via SR509",
+    "routeNum" : "113",
+    "routeID" : "1_113"
+  },
+  {
+    "routeName" : "Lakeside",
+    "routeNum" : "980",
+    "routeID" : "1_980"
+  },
+  {
+    "routeName" : "Lakeside\\UPrep Bear Creek PR",
+    "routeNum" : "982",
+    "routeID" : "1_982"
+  },
+  {
+    "routeName" : "Lakeside Activity Bus East",
+    "routeNum" : "981",
+    "routeID" : "1_981"
+  },
+  {
+    "routeName" : "Vashon Is--Tahlequah\/Burton",
+    "routeNum" : "118",
+    "routeID" : "1_118"
+  },
+  {
+    "routeName" : "Lakeside School to Central Area",
+    "routeNum" : "984",
+    "routeID" : "1_984"
+  },
+  {
+    "routeName" : "Dockton",
+    "routeNum" : "119",
+    "routeID" : "1_119"
+  },
+  {
+    "routeName" : "Lakeside School",
+    "routeNum" : "986",
+    "routeID" : "1_986"
+  },
+  {
+    "routeName" : "Renton to Burien",
+    "routeNum" : "140",
+    "routeID" : "1_140"
+  },
+  {
+    "routeName" : "Maple Valley & Renton to C.B.D. Via Sr 900 & I-5",
+    "routeNum" : "143",
+    "routeID" : "1_143"
+  },
+  {
+    "routeName" : "Fairwood--S.Renton Hub Shuttle.",
+    "routeNum" : "148",
+    "routeID" : "1_148"
+  },
+  {
+    "routeName" : "Auburn P&R to Boeing Everett",
+    "routeNum" : "952",
+    "routeID" : "1_952"
+  },
+  {
+    "routeName" : "Normandy Park",
+    "routeNum" : "131",
+    "routeID" : "1_131"
+  },
+  {
+    "routeName" : "Des Moines",
+    "routeNum" : "132",
+    "routeID" : "1_132"
+  },
+  {
+    "routeName" : "Burien\/Gregory Heights Shuttle",
+    "routeNum" : "139",
+    "routeID" : "1_139"
+  },
+  {
+    "routeName" : "Interlake High School",
+    "routeNum" : "888",
+    "routeID" : "1_888"
+  },
+  {
+    "routeName" : "Sammamish HS\/International School",
+    "routeNum" : "889",
+    "routeID" : "1_889"
+  },
+  {
+    "routeName" : "Bellevue SD Newport BHS Int'l Sch",
+    "routeNum" : "887",
+    "routeID" : "1_887"
+  },
+  {
+    "routeName" : "Center Park",
+    "routeNum" : "688",
+    "routeID" : "1_688"
+  },
+  {
+    "routeName" : "Downtown\/Magnolia\/Ballard\/Lakeside",
+    "routeNum" : "994",
+    "routeID" : "1_994"
+  },
+  {
+    "routeName" : "Laurelhurst-Lakeside-Evergreen Schools",
+    "routeNum" : "995",
+    "routeID" : "1_995"
+  },
+  {
+    "routeName" : "Mercer Island HS South Island",
+    "routeNum" : "891",
+    "routeID" : "1_891"
+  },
+  {
+    "routeName" : "Mercer Island HS North Island",
+    "routeNum" : "892",
+    "routeID" : "1_892"
+  },
+  {
+    "routeName" : "911 For Lake Washington High School",
+    "routeNum" : "893",
+    "routeID" : "1_893"
+  },
+  {
+    "routeName" : "A-Line Rapid Ride",
+    "routeNum" : "A Line",
+    "routeID" : "1_A Line"
+  },
+  {
+    "routeName" : "West Seattle Water Taxi Shuttle",
+    "routeNum" : "773",
+    "routeID" : "1_773"
+  },
+  {
+    "routeName" : "Water Taxi shuttle Alki loop",
+    "routeNum" : "775",
+    "routeID" : "1_775"
+  },
+  {
+    "routeName" : "Twin Lakes P&R\/Federal Way\/Univ Dist",
+    "routeNum" : "197",
+    "routeID" : "1_197"
+  },
+  {
+    "routeName" : "Star Lk. to First Hill",
+    "routeNum" : "193",
+    "routeID" : "1_193"
+  },
+  {
+    "routeName" : "S. Military Rd. - K.D.M. - I-5 to Seneca St.",
+    "routeNum" : "192",
+    "routeID" : "1_192"
+  },
+  {
+    "routeName" : "Star Lk. P&R Via SODO Wy",
+    "routeNum" : "190",
+    "routeID" : "1_190"
+  },
+  {
+    "routeName" : "B-Line Rapid Ride",
+    "routeNum" : "B Line",
+    "routeID" : "1_B Line"
+  },
+  {
+    "routeName" : "D-Line Rapid Ride",
+    "routeNum" : "D Line",
+    "routeID" : "1_D Line"
+  },
+  {
+    "routeName" : "tripper storage shuttle",
+    "routeNum" : "661",
+    "routeID" : "1_661"
+  },
+  {
+    "routeName" : "Seattle Center to U-District",
+    "routeNum" : "32",
+    "routeID" : "1_32"
+  },
+  {
+    "routeName" : "Magnolia to University",
+    "routeNum" : "31",
+    "routeID" : "1_31"
+  },
+  {
+    "routeName" : "Sandpoint\/U-Dist",
+    "routeNum" : "30",
+    "routeID" : "1_30"
+  },
+  {
+    "routeName" : "Magnolia via W Government Wy",
+    "routeNum" : "24",
+    "routeID" : "1_24"
+  },
+  {
+    "routeName" : "Laurelhurst-Lakeview",
+    "routeNum" : "25",
+    "routeID" : "1_25"
+  },
+  {
+    "routeName" : "West Seattle\/White Center",
+    "routeNum" : "22",
+    "routeID" : "1_22"
+  },
+  {
+    "routeName" : "Broadview",
+    "routeNum" : "28",
+    "routeID" : "1_28"
+  },
+  {
+    "routeName" : "Ballard - West Queen Anne (old 2express +)",
+    "routeNum" : "29",
+    "routeID" : "1_29"
+  },
+  {
+    "routeName" : "Latona",
+    "routeNum" : "26",
+    "routeID" : "1_26"
+  },
+  {
+    "routeName" : "Yesler-Leschi Park",
+    "routeNum" : "27",
+    "routeID" : "1_27"
+  },
+  {
+    "routeName" : "Lake City\/Northgate\/CBD",
+    "routeNum" : "41",
+    "routeID" : "1_41"
+  },
+  {
+    "routeName" : "CBD-NGTC via Fremont & Ballard",
+    "routeNum" : "40",
+    "routeID" : "1_40"
+  },
+  {
+    "routeName" : "cbd\/u-district",
+    "routeNum" : "43",
+    "routeID" : "1_43"
+  },
+  {
+    "routeName" : "Ft Lawton",
+    "routeNum" : "33",
+    "routeID" : "1_33"
+  },
+  {
+    "routeName" : "Jefferson Park\/Rainier Beach",
+    "routeNum" : "36",
+    "routeID" : "1_36"
+  },
+  {
+    "routeName" : "Alki",
+    "routeNum" : "37",
+    "routeID" : "1_37"
+  },
+  {
+    "routeName" : "capitol hill",
+    "routeNum" : "10",
+    "routeID" : "1_10"
+  },
+  {
+    "routeName" : "35  Av SW\/Arbor Heights",
+    "routeNum" : "21",
+    "routeID" : "1_21"
+  },
+  {
+    "routeName" : "Magnolia",
+    "routeNum" : "19",
+    "routeID" : "1_19"
+  },
+  {
+    "routeName" : "Blue Ridge\/Downtown",
+    "routeNum" : "15",
+    "routeID" : "1_15"
+  },
+  {
+    "routeName" : "Meridian",
+    "routeNum" : "16",
+    "routeID" : "1_16"
+  },
+  {
+    "routeName" : "Sunset Hill",
+    "routeNum" : "17",
+    "routeID" : "1_17"
+  },
+  {
+    "routeName" : "North Beach\/Downtown",
+    "routeNum" : "18",
+    "routeID" : "1_18"
+  },
+  {
+    "routeName" : "Madison",
+    "routeNum" : "11",
+    "routeID" : "1_11"
+  },
+  {
+    "routeName" : "interlaken park",
+    "routeNum" : "12",
+    "routeID" : "1_12"
+  },
+  {
+    "routeName" : "seattle pacific university",
+    "routeNum" : "13",
+    "routeID" : "1_13"
+  },
+  {
+    "routeName" : "Mt Baker",
+    "routeNum" : "14",
+    "routeID" : "1_14"
+  },
+  {
+    "routeName" : "View Ridge",
+    "routeNum" : "71",
+    "routeID" : "1_71"
+  },
+  {
+    "routeName" : "Lake City",
+    "routeNum" : "72",
+    "routeID" : "1_72"
+  },
+  {
+    "routeName" : "University District",
+    "routeNum" : "70",
+    "routeID" : "1_70"
+  },
+  {
+    "routeName" : "UW - NTC - Ballard",
+    "routeNum" : "75",
+    "routeID" : "1_75"
+  },
+  {
+    "routeName" : "Wedgwood Express",
+    "routeNum" : "76",
+    "routeID" : "1_76"
+  },
+  {
+    "routeName" : "Jackson Park",
+    "routeNum" : "73",
+    "routeID" : "1_73"
+  },
+  {
+    "routeName" : "Sandpoint\/U-Dist\/CPS",
+    "routeNum" : "74",
+    "routeID" : "1_74"
+  },
+  {
+    "routeName" : "Northgate to UW Campus via 25 NE",
+    "routeNum" : "68",
+    "routeID" : "1_68"
+  },
+  {
+    "routeName" : "Northgate to UW Campus thru Roosevelt",
+    "routeNum" : "67",
+    "routeID" : "1_67"
+  },
+  {
+    "routeName" : "5 & Main to NTC",
+    "routeNum" : "66",
+    "routeID" : "1_66"
+  },
+  {
+    "routeName" : "E-Line Rapid Ride",
+    "routeNum" : "E Line",
+    "routeID" : "1_E Line"
+  },
+  {
+    "routeName" : "Queen Anne\/Greenwood Owl trips",
+    "routeNum" : "82",
+    "routeID" : "1_82"
+  },
+  {
+    "routeName" : "Univ Dist\/Ravenna Night Owl",
+    "routeNum" : "83",
+    "routeID" : "1_83"
+  },
+  {
+    "routeName" : "E Cherry\/E Madison All Nighter",
+    "routeNum" : "84",
+    "routeID" : "1_84"
+  },
+  {
+    "routeName" : "Jackson Park Express",
+    "routeNum" : "77",
+    "routeID" : "1_77"
+  },
+  {
+    "routeName" : "Seward Park\/Alki",
+    "routeNum" : "50",
+    "routeID" : "1_50"
+  },
+  {
+    "routeName" : "CBD-Cap Hill-U Dist",
+    "routeNum" : "49",
+    "routeID" : "1_49"
+  },
+  {
+    "routeName" : "Loyal Heights\/Mt Baker TC",
+    "routeNum" : "48",
+    "routeID" : "1_48"
+  },
+  {
+    "routeName" : "Summit",
+    "routeNum" : "47",
+    "routeID" : "1_47"
+  },
+  {
+    "routeName" : "ballard\/montlake",
+    "routeNum" : "44",
+    "routeID" : "1_44"
+  },
+  {
+    "routeName" : "SODO-Ballard Reverse Peak",
+    "routeNum" : "62",
+    "routeID" : "1_62"
+  },
+  {
+    "routeName" : "Lake City - CBD - First Hill",
+    "routeNum" : "64",
+    "routeID" : "1_64"
+  },
+  {
+    "routeName" : "NTC to UW",
+    "routeNum" : "65",
+    "routeID" : "1_65"
+  },
+  {
+    "routeName" : "Beacon Hill\/Broadway dist Shuttle",
+    "routeNum" : "60",
+    "routeID" : "1_60"
+  },
+  {
+    "routeName" : "Ballard - North Beach Loop",
+    "routeNum" : "61",
+    "routeID" : "1_61"
+  },
+  {
+    "routeName" : "Admiral Way\/Alki",
+    "routeNum" : "56",
+    "routeID" : "1_56"
+  },
+  {
+    "routeName" : "W. Sea. Admiral Dist",
+    "routeNum" : "55",
+    "routeID" : "1_55"
+  },
+  {
+    "routeName" : "Admiral Way\/Genesee Hill",
+    "routeNum" : "57",
+    "routeID" : "1_57"
+  },
+  {
+    "routeName" : "Totem Lake\/U Dist.",
+    "routeNum" : "277",
+    "routeID" : "1_277"
+  },
+  {
+    "routeName" : "Issaquah to U Dist",
+    "routeNum" : "271",
+    "routeID" : "1_271"
+  },
+  {
+    "routeName" : "Seattle\/Bellevue\/Renton OWL",
+    "routeNum" : "280",
+    "routeID" : "1_280"
+  },
+  {
+    "routeName" : "Rainier Beach\/Renton Shuttle",
+    "routeNum" : "107",
+    "routeID" : "1_107"
+  },
+  {
+    "routeName" : "Renton-Downtown Seattle",
+    "routeNum" : "106",
+    "routeID" : "1_106"
+  },
+  {
+    "routeName" : "Renton Hub - Renton Highlands",
+    "routeNum" : "105",
+    "routeID" : "1_105"
+  },
+  {
+    "routeName" : "Fairwood - Seattle",
+    "routeNum" : "102",
+    "routeID" : "1_102"
+  },
+  {
+    "routeName" : "Waterfront",
+    "routeNum" : "99",
+    "routeID" : "1_99"
+  },
+  {
+    "routeName" : "Renton Transit Center to CBD",
+    "routeNum" : "101",
+    "routeID" : "1_101"
+  },
+  {
+    "routeName" : "Bellevue\/Kirkland\/Kenmore",
+    "routeNum" : "234",
+    "routeID" : "1_234"
+  },
+  {
+    "routeName" : "Bellevue\/Redmond",
+    "routeNum" : "232",
+    "routeID" : "1_232"
+  },
+  {
+    "routeName" : "UWB Bothell CC\/KTC shuttle",
+    "routeNum" : "238",
+    "routeID" : "1_238"
+  },
+  {
+    "routeName" : "Bellevue\/Woodinville",
+    "routeNum" : "237",
+    "routeID" : "1_237"
+  },
+  {
+    "routeName" : "Woodinville\/KTC shuttle",
+    "routeNum" : "236",
+    "routeID" : "1_236"
+  },
+  {
+    "routeName" : "BTC To Kingsgate Fall 2011",
+    "routeNum" : "235",
+    "routeID" : "1_235"
+  },
+  {
+    "routeName" : "Woodinville\/University",
+    "routeNum" : "372",
+    "routeID" : "1_372"
+  },
+  {
+    "routeName" : "Aurora Village - University District",
+    "routeNum" : "373",
+    "routeID" : "1_373"
+  },
+  {
+    "routeName" : "Jackson Park to Wilburton P&R",
+    "routeNum" : "243",
+    "routeID" : "1_243"
+  },
+  {
+    "routeName" : "North Seattle to Overlake",
+    "routeNum" : "242",
+    "routeID" : "1_242"
+  },
+  {
+    "routeName" : "Factoria - Kirkland",
+    "routeNum" : "245",
+    "routeID" : "1_245"
+  },
+  {
+    "routeName" : "Kenmore Kingsgate Overlake",
+    "routeNum" : "244",
+    "routeID" : "1_244"
+  },
+  {
+    "routeName" : "Bellevue\/Somerset\/Factoria - old",
+    "routeNum" : "246",
+    "routeID" : "1_246"
+  },
+  {
+    "routeName" : "Bellevue\/Overlake\/Redmond",
+    "routeNum" : "249",
+    "routeID" : "1_249"
+  },
+  {
+    "routeName" : "Redmond-Kirkland",
+    "routeNum" : "248",
+    "routeID" : "1_248"
+  },
+  {
+    "routeName" : "Bellevue\\Renton",
+    "routeNum" : "240",
+    "routeID" : "1_240"
+  },
+  {
+    "routeName" : "Eastgate Factoria BTC Fall 11",
+    "routeNum" : "241",
+    "routeID" : "1_241"
+  },
+  {
+    "routeName" : "Shoreline Comm Coll\/Greenwood",
+    "routeNum" : "355",
+    "routeID" : "1_355"
+  },
+  {
+    "routeName" : "Southcenter\/Fairwood DART",
+    "routeNum" : "906",
+    "routeID" : "1_906"
+  },
+  {
+    "routeName" : "Federal Way - S Twin Lakes 903",
+    "routeNum" : "903",
+    "routeID" : "1_903"
+  },
+  {
+    "routeName" : "Seattle\/Juanita\/Kingsgate",
+    "routeNum" : "257",
+    "routeID" : "1_257"
+  },
+  {
+    "routeName" : "Federal Way\/Dash Point DART",
+    "routeNum" : "901",
+    "routeID" : "1_901"
+  },
+  {
+    "routeName" : "Seattle\/Kirkland\/Kingsgate (Tunnel)",
+    "routeNum" : "255",
+    "routeID" : "1_255"
+  },
+  {
+    "routeName" : "Seattle\/Kingsgate Via SR-520\/I-405",
+    "routeNum" : "252",
+    "routeID" : "1_252"
+  },
+  {
+    "routeName" : "Seattle\/Overlake\/Redmond",
+    "routeNum" : "250",
+    "routeID" : "1_250"
+  },
+  {
+    "routeName" : "Issaquah Plateau",
+    "routeNum" : "269",
+    "routeID" : "1_269"
+  },
+  {
+    "routeName" : "Seattle\/Bear Creek",
+    "routeNum" : "268",
+    "routeID" : "1_268"
+  },
+  {
+    "routeName" : "Redmond\/Seattle Express",
+    "routeNum" : "265",
+    "routeID" : "1_265"
+  },
+  {
+    "routeName" : "Seattle\/Juanita\/Finn Hill",
+    "routeNum" : "260",
+    "routeID" : "1_260"
+  },
+  {
+    "routeName" : "West Tumwater",
+    "routeNum" : "12",
+    "routeID" : "19_12"
+  },
+  {
+    "routeName" : "East Tumwater",
+    "routeNum" : "13",
+    "routeID" : "19_13"
+  },
+  {
+    "routeName" : "N Bethel\/N Central",
+    "routeNum" : "21",
+    "routeID" : "19_21"
+  },
+  {
+    "routeName" : "TESC",
+    "routeNum" : "41",
+    "routeID" : "19_41"
+  },
+  {
+    "routeName" : "SPSCC\/Tumwater Square",
+    "routeNum" : "43",
+    "routeID" : "19_43"
+  },
+  {
+    "routeName" : "Family Court",
+    "routeNum" : "42",
+    "routeID" : "19_42"
+  },
+  {
+    "routeName" : "Lacey via Group Health",
+    "routeNum" : "60",
+    "routeID" : "19_60"
+  },
+  {
+    "routeName" : "College St\/Amtrak",
+    "routeNum" : "64",
+    "routeID" : "19_64"
+  },
+  {
+    "routeName" : "Capital Medical Center",
+    "routeNum" : "47",
+    "routeID" : "19_47"
+  },
+  {
+    "routeName" : "Conger\/Capital Mall",
+    "routeNum" : "45",
+    "routeID" : "19_45"
+  },
+  {
+    "routeName" : "SPSCC\/Capital Mall",
+    "routeNum" : "44",
+    "routeID" : "19_44"
+  },
+  {
+    "routeName" : "Capital Mall",
+    "routeNum" : "49",
+    "routeID" : "19_49"
+  },
+  {
+    "routeName" : "Capital Mall\/TESC",
+    "routeNum" : "48",
+    "routeID" : "19_48"
+  },
+  {
+    "routeName" : "Yelm Hwy\/Carpenter Rd",
+    "routeNum" : "68",
+    "routeID" : "19_68"
+  },
+  {
+    "routeName" : "Tri Lake",
+    "routeNum" : "67",
+    "routeID" : "19_67"
+  },
+  {
+    "routeName" : "Ruddell Road",
+    "routeNum" : "66",
+    "routeID" : "19_66"
+  },
+  {
+    "routeName" : "Dash",
+    "routeNum" : "101",
+    "routeID" : "19_101"
+  },
+  {
+    "routeName" : "Boulevard Rd\/Yelm",
+    "routeNum" : "94",
+    "routeID" : "19_94"
+  },
+  {
+    "routeName" : "Olympia\/Tacoma Mall",
+    "routeNum" : "620",
+    "routeID" : "19_620"
+  },
+  {
+    "routeName" : "Nightline",
+    "routeNum" : "411",
+    "routeID" : "19_411"
+  },
+  {
+    "routeName" : "Lacey\\Tacoma",
+    "routeNum" : "612",
+    "routeID" : "19_612"
+  },
+  {
+    "routeName" : "Olympia\/Tacoma",
+    "routeNum" : "603",
+    "routeID" : "19_603"
+  },
+  {
+    "routeName" : "Olympia\/Lacey\/Tacoma",
+    "routeNum" : "605",
+    "routeID" : "19_605"
+  },
+  {
+    "routeName" : "Tumwater\/Lakewood",
+    "routeNum" : "609",
+    "routeID" : "19_609"
+  },
+  {
+    "routeName" : "Martin Way\/Meridian",
+    "routeNum" : "62A",
+    "routeID" : "19_62A"
+  },
+  {
+    "routeName" : "Martin Way\/The Meadows",
+    "routeNum" : "62B",
+    "routeID" : "19_62B"
+  },
+  {
+    "routeName" : "Sounder \/ North",
+    "routeNum" : "",
+    "routeID" : "40_SNDR_N"
+  },
+  {
+    "routeName" : "Sounder \/ South",
+    "routeNum" : "",
+    "routeID" : "40_SNDR_S"
+  },
+  {
+    "routeName" : "Seattle Express",
+    "routeNum" : "592",
+    "routeID" : "40_592"
+  },
+  {
+    "routeName" : "Seattle Express",
+    "routeNum" : "590",
+    "routeID" : "40_590"
+  },
+  {
+    "routeName" : "Bonney Lake\/Sumner Sounder Station",
+    "routeNum" : "596",
+    "routeID" : "40_596"
+  },
+  {
+    "routeName" : "Seattle Express",
+    "routeNum" : "594",
+    "routeID" : "40_594"
+  },
+  {
+    "routeName" : "Seattle Express",
+    "routeNum" : "595",
+    "routeID" : "40_595"
+  },
+  {
+    "routeName" : "Bellevue - Everett",
+    "routeNum" : "532",
+    "routeID" : "40_532"
+  },
+  {
+    "routeName" : "Bellevue - Lynnwood",
+    "routeNum" : "535",
+    "routeID" : "40_535"
+  },
+  {
+    "routeName" : "",
+    "routeNum" : "545",
+    "routeID" : "40_545"
+  },
+  {
+    "routeName" : "",
+    "routeNum" : "542",
+    "routeID" : "40_542"
+  },
+  {
+    "routeName" : "",
+    "routeNum" : "540",
+    "routeID" : "40_540"
+  },
+  {
+    "routeName" : "Seattle - Everett",
+    "routeNum" : "510",
+    "routeID" : "40_510"
+  },
+  {
+    "routeName" : "Seattle - Ash Way",
+    "routeNum" : "511",
+    "routeID" : "40_511"
+  },
+  {
+    "routeName" : "Seattle - Everett",
+    "routeNum" : "512",
+    "routeID" : "40_512"
+  },
+  {
+    "routeName" : "Everett - Seattle",
+    "routeNum" : "513",
+    "routeID" : "40_513"
+  },
+  {
+    "routeName" : "Amtrak",
+    "routeNum" : "",
+    "routeID" : "40_AMTK"
+  },
+  {
+    "routeName" : "",
+    "routeNum" : "522",
+    "routeID" : "40_522"
+  },
+  {
+    "routeName" : "FederalWay-Seattle",
+    "routeNum" : "577",
+    "routeID" : "40_577"
+  },
+  {
+    "routeName" : "Seattle\/Puyallup",
+    "routeNum" : "578",
+    "routeID" : "40_578"
+  },
+  {
+    "routeName" : "Lakewood\/Tacoma\/SeaTac Airport",
+    "routeNum" : "574",
+    "routeID" : "40_574"
+  },
+  {
+    "routeName" : "Tacoma - U Distric",
+    "routeNum" : "586",
+    "routeID" : "40_586"
+  },
+  {
+    "routeName" : "",
+    "routeNum" : "LINK",
+    "routeID" : "40_LINK"
+  },
+  {
+    "routeName" : "",
+    "routeNum" : "550",
+    "routeID" : "40_550"
+  },
+  {
+    "routeName" : "",
+    "routeNum" : "555",
+    "routeID" : "40_555"
+  },
+  {
+    "routeName" : "",
+    "routeNum" : "554",
+    "routeID" : "40_554"
+  },
+  {
+    "routeName" : "",
+    "routeNum" : "556",
+    "routeID" : "40_556"
+  },
+  {
+    "routeName" : "Kent-Overlake",
+    "routeNum" : "567",
+    "routeID" : "40_567"
+  },
+  {
+    "routeName" : "Auburn-Overlake",
+    "routeNum" : "566",
+    "routeID" : "40_566"
+  },
+  {
+    "routeName" : "Tacoma Link",
+    "routeNum" : "",
+    "routeID" : "40_TLINK"
+  },
+  {
+    "routeName" : "South Lake Union Streetcar",
+    "routeNum" : "98",
+    "routeID" : "23_98"
+  },
+  {
+    "routeName" : "SCH-Green",
+    "routeNum" : "",
+    "routeID" : "sch_867"
+  },
+  {
+    "routeName" : "SCH-Mag_70th",
+    "routeNum" : "",
+    "routeID" : "sch_869"
+  },
+  {
+    "routeName" : "SCH-Church",
+    "routeNum" : "",
+    "routeID" : "sch_863"
+  },
+  {
+    "routeName" : "SCH-E1",
+    "routeNum" : "",
+    "routeID" : "sch_865"
+  },
+  {
+    "routeName" : "SCH-Orange",
+    "routeNum" : "",
+    "routeID" : "sch_873"
+  },
+  {
+    "routeName" : "SCH-Purple",
+    "routeNum" : "",
+    "routeID" : "sch_876"
+  },
+  {
+    "routeName" : "SCH-Loop",
+    "routeNum" : "",
+    "routeID" : "sch_875"
+  },
+  {
+    "routeName" : "SCH-Magnuson",
+    "routeNum" : "",
+    "routeID" : "sch_871"
+  },
+  {
+    "routeName" : "Gold Bar - Everett",
+    "routeNum" : "270",
+    "routeID" : "29_270"
+  },
+  {
+    "routeName" : "Gold Bar - Boeing",
+    "routeNum" : "277",
+    "routeID" : "29_277"
+  },
+  {
+    "routeName" : "Monroe - Everett",
+    "routeNum" : "275",
+    "routeID" : "29_275"
+  },
+  {
+    "routeName" : "Granite Falls - Everett",
+    "routeNum" : "280",
+    "routeID" : "29_280"
+  },
+  {
+    "routeName" : "Mariner P&R - Aurora Village",
+    "routeNum" : "101",
+    "routeID" : "29_101"
+  },
+  {
+    "routeName" : "Mariner P&R - Bothell",
+    "routeNum" : "105",
+    "routeID" : "29_105"
+  },
+  {
+    "routeName" : "Mariner P&R - Bothell",
+    "routeNum" : "106",
+    "routeID" : "29_106"
+  },
+  {
+    "routeName" : "Darrington - Arlington",
+    "routeNum" : "230",
+    "routeID" : "29_230"
+  },
+  {
+    "routeName" : "Stanwood - Smokey Point",
+    "routeNum" : "240",
+    "routeID" : "29_240"
+  },
+  {
+    "routeName" : "Stanwood - Boeing",
+    "routeNum" : "247",
+    "routeID" : "29_247"
+  },
+  {
+    "routeName" : "Smokey Point - Lynnwood",
+    "routeNum" : "201",
+    "routeID" : "29_201"
+  },
+  {
+    "routeName" : "Smokey Point - Lynnwood",
+    "routeNum" : "202",
+    "routeID" : "29_202"
+  },
+  {
+    "routeName" : "Lynnwood - Seattle",
+    "routeNum" : "402",
+    "routeID" : "29_402"
+  },
+  {
+    "routeName" : "Edmonds P&R - Seattle",
+    "routeNum" : "405",
+    "routeID" : "29_405"
+  },
+  {
+    "routeName" : "Everett - Bellevue",
+    "routeNum" : "532",
+    "routeID" : "29_532"
+  },
+  {
+    "routeName" : "Lynnwood - Bellevue",
+    "routeNum" : "535",
+    "routeID" : "29_535"
+  },
+  {
+    "routeName" : "McCollum Park - University District",
+    "routeNum" : "810",
+    "routeID" : "29_810"
+  },
+  {
+    "routeName" : "Arlington - Boeing",
+    "routeNum" : "227",
+    "routeID" : "29_227"
+  },
+  {
+    "routeName" : "Marysville - Tulalip",
+    "routeNum" : "222",
+    "routeID" : "29_222"
+  },
+  {
+    "routeName" : "Arlington - Smokey Point",
+    "routeNum" : "220",
+    "routeID" : "29_220"
+  },
+  {
+    "routeName" : "Snohomish - Seattle",
+    "routeNum" : "424",
+    "routeID" : "29_424"
+  },
+  {
+    "routeName" : "Lake Stevens - Seattle",
+    "routeNum" : "425",
+    "routeID" : "29_425"
+  },
+  {
+    "routeName" : "Stanwood - Seattle",
+    "routeNum" : "422",
+    "routeID" : "29_422"
+  },
+  {
+    "routeName" : "Marysville - Seattle",
+    "routeNum" : "421",
+    "routeID" : "29_421"
+  },
+  {
+    "routeName" : "Marysville - University District",
+    "routeNum" : "821",
+    "routeID" : "29_821"
+  },
+  {
+    "routeName" : "Silver Firs - Seattle",
+    "routeNum" : "412",
+    "routeID" : "29_412"
+  },
+  {
+    "routeName" : "Swamp Creek P&R - Seattle",
+    "routeNum" : "413",
+    "routeID" : "29_413"
+  },
+  {
+    "routeName" : "Mariner P&R - Seattle",
+    "routeNum" : "410",
+    "routeID" : "29_410"
+  },
+  {
+    "routeName" : "North Lynnwood - Seattle",
+    "routeNum" : "415",
+    "routeID" : "29_415"
+  },
+  {
+    "routeName" : "Everett - Seattle",
+    "routeNum" : "510",
+    "routeID" : "29_510"
+  },
+  {
+    "routeName" : "Edmonds - Seattle",
+    "routeNum" : "416",
+    "routeID" : "29_416"
+  },
+  {
+    "routeName" : "Ash Way P&R - Seattle",
+    "routeNum" : "511",
+    "routeID" : "29_511"
+  },
+  {
+    "routeName" : "Mukilteo - Seattle",
+    "routeNum" : "417",
+    "routeID" : "29_417"
+  },
+  {
+    "routeName" : "Everett - Seattle",
+    "routeNum" : "512",
+    "routeID" : "29_512"
+  },
+  {
+    "routeName" : "Everett - Seattle",
+    "routeNum" : "513",
+    "routeID" : "29_513"
+  },
+  {
+    "routeName" : "Canyon Park - Lynnwood",
+    "routeNum" : "120",
+    "routeID" : "29_120"
+  },
+  {
+    "routeName" : "Ash Way P&R - Mountlake Terrace",
+    "routeNum" : "119",
+    "routeID" : "29_119"
+  },
+  {
+    "routeName" : "Brier - Mountlake Terrace",
+    "routeNum" : "111",
+    "routeID" : "29_111"
+  },
+  {
+    "routeName" : "Mountlake Terrace - Edmonds",
+    "routeNum" : "110",
+    "routeID" : "29_110"
+  },
+  {
+    "routeName" : "Mukilteo - Ash Way P&R",
+    "routeNum" : "113",
+    "routeID" : "29_113"
+  },
+  {
+    "routeName" : "Mountlake Terrace - Ash Way P&R",
+    "routeNum" : "112",
+    "routeID" : "29_112"
+  },
+  {
+    "routeName" : "Mariner P&R - Aurora Village",
+    "routeNum" : "115",
+    "routeID" : "29_115"
+  },
+  {
+    "routeName" : "Silver Firs - Edmonds",
+    "routeNum" : "116",
+    "routeID" : "29_116"
+  },
+  {
+    "routeName" : "Everett - Aurora Village",
+    "routeNum" : "701",
+    "routeID" : "29_701"
+  },
+  {
+    "routeName" : "Mill Creek - Seattle",
+    "routeNum" : "435",
+    "routeID" : "29_435"
+  },
+  {
+    "routeName" : "Lynnwood - University District",
+    "routeNum" : "855",
+    "routeID" : "29_855"
+  },
+  {
+    "routeName" : "McCollum Park - University District",
+    "routeNum" : "860",
+    "routeID" : "29_860"
+  },
+  {
+    "routeName" : "Edmonds - Lynnwood",
+    "routeNum" : "130",
+    "routeID" : "29_130"
+  },
+  {
+    "routeName" : "Edmonds P&R - University District",
+    "routeNum" : "871",
+    "routeID" : "29_871"
+  },
+  {
+    "routeName" : "Mukilteo - University District",
+    "routeNum" : "880",
+    "routeID" : "29_880"
+  },
+  {
+    "routeName" : "Alderwood Mall - Edmonds",
+    "routeNum" : "196",
+    "routeID" : "29_196"
+  }
+]

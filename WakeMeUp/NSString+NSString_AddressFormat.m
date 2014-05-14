@@ -42,8 +42,6 @@
         [adMut insertString:@"." atIndex:index + (count == 1 ? 1:-1)];
         count++;
     }
-    
-    NSLog(@"%@", matchestwo);
     address = [adMut copy];
     return address;
 }

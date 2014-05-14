@@ -33,6 +33,7 @@
 + (UIColor *) asbestosColor;
 + (UIColor *) tealColor;
 + (UIColor *) grayDetailColor;
++ (UIColor *) tealDetailColor;
 + (UIColor *) blendedColorWithForegroundColor:(UIColor *)foregroundColor
                               backgroundColor:(UIColor *)backgroundColor
                                  percentBlend:(CGFloat) percentBlend;

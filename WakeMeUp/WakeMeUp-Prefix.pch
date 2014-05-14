@@ -5,6 +5,7 @@
 //
 
 #import <Availability.h>
+#import "UITableView+CustomReload.h"
 
 #ifndef __IPHONE_5_0
 #warning "This project uses features only available in iOS SDK 5.0 and later."
@@ -20,3 +21,61 @@
                 delegate:nil \
                 cancelButtonTitle:@"OK" \
                 otherButtonTitles:nil] show]
+
+#define kStop_Num @"Stop #"
+#define kLat @"Lat"
+#define kLon @"Lon"
+#define kName @"Name"
+#define kRoute_Num @"Route #"
+#define kStop_ID @"Stop ID"
+
+#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+
+#define tick NSDate *startTime = [NSDate date];
+#define tock NSLog(@"Time: %f", -[startTime timeIntervalSinceNow]);
+
+#define MGCreateDark UIView *darkView;
+
+#define MGSetDark darkView = [[UIView alloc] initWithFrame:self.navigationController.view.bounds]; \
+darkView.backgroundColor = [UIColor blackColor]; \
+darkView.alpha = 0.0; \
+[self.navigationController.view addSubview:darkView]; 
+
+#define MGHideDark [UIView animateWithDuration:0.3 animations:^{ \
+darkView.alpha = 0.0; \
+}];
+
+#define MGAlert(TITLE,MSG) DQAlertView *alert = [[DQAlertView alloc] initWithTitle:(TITLE) message:(MSG) cancelButtonTitle:@"OK!" otherButtonTitle:nil]; \
+alert.tintColor = [UIColor whiteColor]; \
+alert.backgroundColor = [UIColor grayDetailColor]; \
+alert.seperatorColor = [UIColor colorWithHue:0.0f saturation:0.0 brightness:0.2 alpha:1]; \
+alert.cancelButton.backgroundColor = [UIColor tealColor]; \
+alert.cancelButton.layer.cornerRadius = 5.0f; \
+alert.cancelButton.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:16]; \
+alert.cancelButton.titleLabel.textColor = [UIColor whiteColor]; \
+alert.messageLabel.textColor = [UIColor whiteColor]; \
+alert.messageLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:14]; \
+alert.titleLabel.font = [UIFont fontWithName:@"ArialMT" size:14]; \
+alert.titleLabel.textColor = [UIColor whiteColor]; \
+alert.cornerRadius = 5.0f; \
+alert.delegate = self; \
+[UIView animateWithDuration:0.35 animations:^{ \
+    darkView.alpha = 0.5; \
+}]; \
+[alert show];
+
+#define SWF(format,...) [NSString stringWithFormat:format, ##__VA_ARGS__]
+
+#define startP acivityView.hidden = NO; \
+[indicator startAnimating];
+
+#define stopP dispatch_async(dispatch_get_main_queue(), ^{ \
+acivityView.hidden = YES; \
+[indicator stopAnimating]; \
+});
+
+#define updateTable(TABLE) dispatch_async(dispatch_get_main_queue(), ^{ \
+[TABLE reloadData]; \
+TABLE.hidden = NO; \
+});
+

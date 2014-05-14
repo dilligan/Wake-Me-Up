@@ -14,6 +14,8 @@
 {
     // Override point for customization after application launch.
     
+
+    
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:20.0]} forState:UIControlStateNormal];
     
     [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:4.0f forBarMetrics:UIBarMetricsDefault];
@@ -39,9 +41,9 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    ViewController *vc = [ViewController new];
-    [vc stopTimer];
-    NSLog(@"asdasd");
+    //ViewController *vc = [ViewController new];
+    //[vc stopTimer];
+    //NSLog(@"asdasd");
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application

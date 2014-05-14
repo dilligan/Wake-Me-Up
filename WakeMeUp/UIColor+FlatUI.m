@@ -26,10 +26,10 @@
     unsigned int baseValue;
     [[NSScanner scannerWithString:cleanString] scanHexInt:&baseValue];
     
-    float red = ((baseValue >> 24) & 0xFF)/255.0f;
-    float green = ((baseValue >> 16) & 0xFF)/255.0f;
-    float blue = ((baseValue >> 8) & 0xFF)/255.0f;
-    float alpha = ((baseValue >> 0) & 0xFF)/255.0f;
+    double red = ((baseValue >> 24) & 0xFF)/255.0f;
+    double green = ((baseValue >> 16) & 0xFF)/255.0f;
+    double blue = ((baseValue >> 8) & 0xFF)/255.0f;
+    double alpha = ((baseValue >> 0) & 0xFF)/255.0f;
     
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
@@ -263,6 +263,17 @@
     });
     
     return grayDetail;
+}
+
++ (UIColor *) tealDetailColor {
+    static UIColor *tealDetail = nil;
+    static dispatch_once_t tealDetailToken;
+    
+    dispatch_once(&tealDetailToken, ^{
+        tealDetail = [UIColor colorFromHexCode:@"008888"];
+    });
+    
+    return tealDetail;
 }
 
 + (UIColor *) asbestosColor {
