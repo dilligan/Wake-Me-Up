@@ -48,7 +48,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHOOSE A LOCATION" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UrM-cO-ZgU">
-                                <rect key="frame" x="165" y="56" width="108" height="66"/>
+                                <rect key="frame" x="163" y="56" width="108" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -99,7 +99,7 @@
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WESTLAKE AVE. N &amp; CROCKETT ST." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ONd-PZ-P65">
-                                <rect key="frame" x="134" y="76" width="171" height="66"/>
+                                <rect key="frame" x="130" y="76" width="175" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -280,7 +280,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="search"/>
                             </textField>
                             <view contentMode="scaleToFill" id="YUG-F4-lRB" userLabel="Keyboard">
-                                <rect key="frame" x="0.0" y="520" width="320" height="216"/>
+                                <rect key="frame" x="0.0" y="550" width="320" height="216"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5W5-Tn-Mtn">
@@ -398,6 +398,9 @@
                                         <state key="normal" title="LINES">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="lineChoice:" destination="lfl-aR-CFV" eventType="touchUpInside" id="6GP-Yz-B5O"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bFO-Fp-DWe">
                                         <rect key="frame" x="107" y="162" width="106" height="55"/>
@@ -422,6 +425,145 @@
                                             <action selector="searchPressed:" destination="lfl-aR-CFV" eventType="touchUpInside" id="WGB-ES-JUC"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bUA-gX-odA">
+                                        <rect key="frame" x="0.0" y="0.0" width="106" height="53"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.17000000000000001" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="27"/>
+                                        <state key="normal" title="A    ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="linePressed:" destination="lfl-aR-CFV" eventType="touchUpInside" id="r6E-vv-s2i"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LINE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X0S-tA-n08">
+                                        <rect key="frame" x="54" y="16" width="33" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="13"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0Od-en-x4w">
+                                        <rect key="frame" x="107" y="0.0" width="106" height="53"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.17000000000000001" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="27"/>
+                                        <state key="normal" title="B    ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="linePressed:" destination="lfl-aR-CFV" eventType="touchUpInside" id="fh3-DJ-Cvj"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LINE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wPv-5h-Otg">
+                                        <rect key="frame" x="161" y="16" width="33" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="13"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Mfb-mR-i01">
+                                        <rect key="frame" x="214" y="0.0" width="106" height="53"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.17000000000000001" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="27"/>
+                                        <state key="normal" title="C    ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="linePressed:" destination="lfl-aR-CFV" eventType="touchUpInside" id="Ziy-M7-Gyq"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LINE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1gb-id-td8">
+                                        <rect key="frame" x="268" y="16" width="33" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="13"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="h7R-kr-1Sy">
+                                        <rect key="frame" x="0.0" y="54" width="106" height="53"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.17000000000000001" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="27"/>
+                                        <state key="normal" title="D    ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="linePressed:" destination="lfl-aR-CFV" eventType="touchUpInside" id="udJ-L0-RpR"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LINE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ybp-jy-X5Q">
+                                        <rect key="frame" x="54" y="70" width="33" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="13"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hE0-Y2-wKv">
+                                        <rect key="frame" x="107" y="54" width="106" height="53"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.17000000000000001" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="27"/>
+                                        <state key="normal" title="E    ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="linePressed:" destination="lfl-aR-CFV" eventType="touchUpInside" id="wpM-jS-4el"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LINE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EWr-ce-R9a">
+                                        <rect key="frame" x="161" y="70" width="33" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="13"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ENq-Lp-JYJ">
+                                        <rect key="frame" x="214" y="54" width="106" height="53"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.17000000000000001" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="27"/>
+                                        <state key="normal" title="F    ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="linePressed:" destination="lfl-aR-CFV" eventType="touchUpInside" id="BXj-l8-yh7"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LINE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6zs-Hh-6bS">
+                                        <rect key="frame" x="268" y="70" width="33" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="13"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" id="IwE-la-tEb">
+                                        <rect key="frame" x="106" y="0.0" width="1" height="216"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="EB9-JC-FxG">
+                                        <rect key="frame" x="213" y="0.0" width="1" height="216"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.1019607843" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="7Ug-a3-vJ1">
+                                        <rect key="frame" x="0.0" y="53" width="320" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.1019607843" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="Qoq-V9-WQg">
+                                        <rect key="frame" x="0.0" y="107" width="320" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.1019607843" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="3kz-rk-gN4">
+                                        <rect key="frame" x="0.0" y="161" width="320" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.1019607843" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.12" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -494,13 +636,14 @@
                                 <rect key="frame" x="0.0" y="100" width="320" height="355"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.049267586320000001" green="0.05212734267" blue="0.052017405629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.18264353280000001" green="0.19991196689999999" blue="0.1989482045" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="46e-Hf-seX" detailTextLabel="bFJ-et-uaZ" rowHeight="50" style="IBUITableViewCellStyleSubtitle" id="Y0a-71-xkQ">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="46e-Hf-seX" detailTextLabel="bFJ-et-uaZ" rowHeight="50" style="IBUITableViewCellStyleSubtitle" id="Y0a-71-xkQ">
                                         <rect key="frame" x="0.0" y="55" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y0a-71-xkQ" id="PTE-6B-Noj">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="273" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="46e-Hf-seX">
@@ -575,7 +718,7 @@
                                         <rect key="frame" x="0.0" y="55" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Knd-yN-l2e" id="cA9-Ba-YXu">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="273" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sf5-J2-hFf">
@@ -595,6 +738,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.078480109569999998" green="0.084380641579999999" blue="0.084153965119999993" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" white="0.80000000000000004" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -636,9 +780,11 @@
                         <outlet property="acivityView" destination="0nE-Ue-ytd" id="iN0-Fu-EXz"/>
                         <outlet property="customKeyboard" destination="YUG-F4-lRB" id="3jw-a8-eyM"/>
                         <outlet property="indicator" destination="zMP-Is-hig" id="e7M-8w-Rm0"/>
+                        <outlet property="lineChoiceButton" destination="EjA-4q-2UV" id="dAF-i3-DBx"/>
                         <outlet property="routeDirectionTable" destination="06V-30-IeQ" id="N9C-kZ-SqO"/>
                         <outlet property="routeField" destination="0EH-zx-Tmd" id="Yp7-9V-Rvg"/>
                         <outlet property="routeSearchTable" destination="Ert-Wp-3C2" id="FEU-hK-Obi"/>
+                        <outlet property="searchButton" destination="p1Z-qn-k8V" id="asc-nj-RlY"/>
                         <outlet property="stopImage" destination="lUR-g9-Rae" id="iNf-f7-vmP"/>
                         <outlet property="stopLabel" destination="LKo-5Q-i8Y" id="lr4-G2-xsF"/>
                         <outlet property="stopTable" destination="YUh-yx-PQk" id="xzt-sO-GmV"/>
@@ -653,9 +799,19 @@
                         <outletCollection property="numButtons" destination="9n2-FD-cyM" id="0Zu-2n-DUd"/>
                         <outletCollection property="numButtons" destination="Qki-e6-pNj" id="z9F-5Z-nih"/>
                         <outletCollection property="numButtons" destination="kRA-57-1gk" id="4S3-bF-yuE"/>
-                        <outletCollection property="numButtons" destination="EjA-4q-2UV" id="LKC-5h-Pdx"/>
                         <outletCollection property="numButtons" destination="bFO-Fp-DWe" id="pYv-QS-8Ox"/>
-                        <outletCollection property="numButtons" destination="p1Z-qn-k8V" id="xJB-Ju-t33"/>
+                        <outletCollection property="lineButtons" destination="bUA-gX-odA" id="RR0-HE-EwH"/>
+                        <outletCollection property="lineButtons" destination="0Od-en-x4w" id="3Ww-Pp-hdx"/>
+                        <outletCollection property="lineButtons" destination="Mfb-mR-i01" id="4EJ-jg-K2g"/>
+                        <outletCollection property="lineButtons" destination="h7R-kr-1Sy" id="Izi-hi-4mA"/>
+                        <outletCollection property="lineButtons" destination="hE0-Y2-wKv" id="VF5-Rv-6hf"/>
+                        <outletCollection property="lineButtons" destination="ENq-Lp-JYJ" id="A0E-31-dU6"/>
+                        <outletCollection property="lineLabels" destination="6zs-Hh-6bS" id="gY3-9d-gq7"/>
+                        <outletCollection property="lineLabels" destination="EWr-ce-R9a" id="Al7-fq-m0N"/>
+                        <outletCollection property="lineLabels" destination="ybp-jy-X5Q" id="TbF-uB-deB"/>
+                        <outletCollection property="lineLabels" destination="1gb-id-td8" id="17u-az-zgk"/>
+                        <outletCollection property="lineLabels" destination="wPv-5h-Otg" id="Krt-bj-Cok"/>
+                        <outletCollection property="lineLabels" destination="X0S-tA-n08" id="Mml-7Q-FBq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kHb-uj-tIl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -779,8 +935,6 @@
         <image name="AddressTab.png" width="30" height="30"/>
         <image name="BusTab.png" width="30" height="30"/>
         <image name="ButtonHighlight.png" width="320" height="63"/>
-        <image name="ButtonHighlight.png" width="320" height="63"/>
-        <image name="Chevron.png" width="12" height="23"/>
         <image name="Chevron.png" width="12" height="23"/>
         <image name="DistanceIcon.png" width="37" height="12"/>
         <image name="InterTab.png" width="30" height="30"/>

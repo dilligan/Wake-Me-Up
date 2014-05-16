@@ -168,10 +168,14 @@
 
 
 - (IBAction)wakeMeUp:(id)sender {
-    [self startStandardUpdates];
     
-    //if ([[NSUserDefaults standardUserDefaults] objectForKey:@"stopsSelOne"]) {
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"stopSelOne"]) {
+        [self startStandardUpdates];
+
+        float distance = 0.0;
         
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"stopAlertType"] == YES) {
+            
         NSArray *first = [[NSUserDefaults standardUserDefaults] objectForKey:@"stopSelOne"];
         NSArray *second = [[NSUserDefaults standardUserDefaults] objectForKey:@"stopSelTwo"];
     
@@ -180,6 +184,7 @@
         double lat1, lat2, lon1, lon2;
         NSDictionary *firstStop;
         NSDictionary *secondStop;
+            
         
         @try {
             firstStop = first[index];
@@ -205,9 +210,6 @@
         }
         @finally {}
     
-        NSLog(@"%d %@ %@", index, firstStop, secondStop);
-
-    
         if ([firstStop allKeys].count > 0 && [secondStop allKeys].count > 0) {
             
             lat1 = [[firstStop objectForKey:@"Lat"] doubleValue];
@@ -232,17 +234,44 @@
             lon2 = [[secondStop objectForKey:@"Lon"] doubleValue];
             region2 = [[CLCircularRegion alloc] initWithCenter:CLLocationCoordinate2DMake(lat2, lon2) radius:100 identifier:@"stop2"];
         }
-    //}
+        } else {
+            
+            int idx = [[[NSUserDefaults standardUserDefaults] objectForKey:@"stopAlertIdx"] intValue];
+            
+            switch (idx) {
+                case 0:
+                    distance = 0.1;
+                    break;
+                case 1:
+                    distance = 0.25;
+                    break;
+                case 2:
+                    distance = 0.5;
+                    break;
+                case 3:
+                    distance = 1.0;
+                    break;
+                case 4:
+                    distance = 2.0;
+                    break;
+                default:
+                    break;
+            }
+            
+        }
+        
+        double lat3 = [[[[NSUserDefaults standardUserDefaults] objectForKey:@"stopKey"] objectForKey:@"lat"] doubleValue];
+        double lon3 = [[[[NSUserDefaults standardUserDefaults] objectForKey:@"stopKey"] objectForKey:@"lon"] doubleValue];
+        region3 = [[CLCircularRegion alloc] initWithCenter:CLLocationCoordinate2DMake(lat3, lon3) radius:([[NSUserDefaults standardUserDefaults] boolForKey:@"stopAlertType"]) ? 100 : distance identifier:@"stop3"];
+        
+        
+        MGAlert(@"ALARM SET!", @"WE'LL WAKE YOU UP WHEN YOU GET CLOSE TO YOUR STOP")
+        
+        
+        tracking = YES;
+        
+    }
     
-    double lat3 = [[[[NSUserDefaults standardUserDefaults] objectForKey:@"stopKey"] objectForKey:@"lat"] doubleValue];
-    double lon3 = [[[[NSUserDefaults standardUserDefaults] objectForKey:@"stopKey"] objectForKey:@"lon"] doubleValue];
-    region3 = [[CLCircularRegion alloc] initWithCenter:CLLocationCoordinate2DMake(lat3, lon3) radius:80 identifier:@"stop3"];
-    
- 
-    MGAlert(@"ALARM SET!", @"WE'LL WAKE YOU UP WHEN YOU GET CLOSE TO YOUR STOP")
-    
-
-    tracking = YES;
 }
 
 

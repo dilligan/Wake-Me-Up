@@ -28,10 +28,16 @@
 @property (strong, nonatomic) IBOutlet UIView *customKeyboard;
 @property (strong, nonatomic) IBOutlet UIImageView *stopImage;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *numButtons;
+@property (strong, nonatomic) IBOutlet UIButton *lineChoiceButton;
 @property (strong, nonatomic) IBOutlet UITabBar *tabBar;
 - (IBAction)numPressed:(id)sender;
 - (IBAction)searchPressed:(id)sender;
 - (IBAction)dismissKeyboard:(id)sender;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *lineButtons;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *lineLabels;
+- (IBAction)lineChoice:(id)sender;
+- (IBAction)linePressed:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *searchButton;
 
 @end
 
@@ -53,18 +59,27 @@
     CGRect twoImageFrame;
     CGRect threeImageFrame;
     CGRect labelFrame;
+    BOOL isLine;
     
 }
 
 
 
-@synthesize routeField, stepper, stepperLabel, stopLabel, numField, indicator, acivityView, routeSearchTable, routeDirectionTable, stopTable, customKeyboard, numButtons, tabBar, stopImage, stopTypeLabel;
+@synthesize routeField, stepper, searchButton, stepperLabel, stopLabel, numField, indicator, acivityView, routeSearchTable, routeDirectionTable, stopTable, customKeyboard, numButtons, tabBar, stopImage, stopTypeLabel, lineButtons, lineLabels, lineChoiceButton;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     MGSetDark;
 	// Do any additional setup after loading the view.
     routeField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@" ROUTE #" attributes:@{NSForegroundColorAttributeName: [UIColor colorWithWhite:0.5 alpha:1]}];
+    
+    for (UIButton *lineButton in lineButtons) {
+        lineButton.hidden = YES;
+    }
+    
+    for (UILabel *lineLabel in lineLabels) {
+        lineLabel.hidden = YES;
+    }
     
     self.tableView.hidden = YES;
     self.tableView.dataSource = self;
@@ -121,6 +136,20 @@
         [numButton setBackgroundImage:selBack forState:UIControlStateHighlighted];
     }
     
+    for (UIButton *lineButton in lineButtons) {
+        [lineButton setAdjustsImageWhenHighlighted:NO];
+        [lineButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+        [lineButton setBackgroundImage:selBack forState:UIControlStateHighlighted];
+    }
+    
+    [lineChoiceButton setAdjustsImageWhenHighlighted:NO];
+    [lineChoiceButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [lineChoiceButton setBackgroundImage:selBack forState:UIControlStateHighlighted];
+    
+    [searchButton setAdjustsImageWhenHighlighted:NO];
+    [searchButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [searchButton setBackgroundImage:selBack forState:UIControlStateHighlighted];
+    
     tabBar.selectedItem = [tabBar items][0];
     labelFrame = stopLabel.frame;
     stopLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"stopName"];
@@ -136,6 +165,8 @@
     } else if (height == 72) {
         stopImage.frame = threeImageFrame;
     }
+    
+    isLine = NO;
     
 }
 
@@ -189,188 +220,6 @@
     [self textFieldShouldReturn:routeField];
 }
 
-/*
- -(void)searchRoutes {
- NSLog(@"Start");
- 
- acivityView.hidden = NO;
- [indicator startAnimating];
- 
- dispatch_queue_t download_queue = dispatch_queue_create("download", 0);
- 
- dispatch_async(download_queue, ^{
- stopsArray = [NSMutableArray array];
- NSString *URL = [NSString stringWithFormat:@"http://api.pugetsound.onebusaway.org/api/where/stops-for-route/1_%@.xml?key=TEST&version=2", routeField.text];
- NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:URL]];
- //[request setValue:agentString forHTTPHeaderField:@"User-Agent"];
- NSData *xmlFile = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
- NSError *er;
- GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:xmlFile options:0 error:&er];
- @try {
- NSArray *stops = [[doc nodesForXPath:@"//response/data/references/stops" error:&er][0] elementsForName:@"stop"];
- 
- for (GDataXMLElement *stop in stops) {
- NSString *stopNum = [NSString stringWithFormat:@"%@", [(GDataXMLElement *)[stop elementsForName:@"code"][0] stringValue]];
- NSString *lat = [NSString stringWithFormat:@"%@", [(GDataXMLElement *)[stop elementsForName:@"lat"][0] stringValue]];
- NSString *lon = [NSString stringWithFormat:@"%@", [(GDataXMLElement *)[stop elementsForName:@"lon"][0] stringValue]];
- NSString *nameDir = [NSString stringWithFormat:@"%@", [(GDataXMLElement *)[stop elementsForName:@"name"][0] stringValue]];
- nameDir = [self formattedAdd:nameDir];
- NSString *stopId = [NSString stringWithFormat:@"%@", [(GDataXMLElement *)[stop elementsForName:@"id"][0] stringValue]];
- NSString *routeNum = [NSString stringWithFormat:@"%@", routeField.text];
- 
- NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:stopNum, @"Stop #", lat, @"Lat", lon, @"Lon",nameDir, @"Name", stopId, @"Stop ID", routeNum, @"Route #", nil];
- [stopsArray addObject:dict];
- }
- 
- NSString *lastName = nil;
- NSMutableArray *newArray = [NSMutableArray array];
- 
- NSSortDescriptor *titleDes = [[NSSortDescriptor alloc] initWithKey:@"Name" ascending:YES];
- NSArray *sortDesc = [NSArray arrayWithObject:titleDes];
- stopsArray = [[stopsArray sortedArrayUsingDescriptors:sortDesc] copy];
- 
- 
- 
- for (NSDictionary *d in stopsArray) {
- NSString *testTitle = [d objectForKey:@"Name"];
- if (![testTitle isEqualToString:lastName]) {
- [newArray addObject:d];
- lastName = testTitle;
- }
- }
- 
- 
- NSSortDescriptor *stopDes = [[NSSortDescriptor alloc] initWithKey:@"Lat" ascending:YES];
- NSArray *sortDescs = [NSArray arrayWithObject:stopDes];
- stopsArray = [[newArray sortedArrayUsingDescriptors:sortDescs] copy];
- 
- NSSortDescriptor *lonDes = [[NSSortDescriptor alloc] initWithKey:@"Lon" ascending:YES];
- NSArray *lonDescs = [NSArray arrayWithObject:lonDes];
- NSArray *lonArray = [[newArray sortedArrayUsingDescriptors:lonDescs] copy];
- 
- 
- double lonMax = [[lonArray lastObject] doubleValue];
- double lonMin = [[lonArray firstObject] doubleValue];
- double lonDifference = lonMax - lonMin;
- 
- double latMax = [[stopsArray lastObject] doubleValue];
- double latMin = [[stopsArray firstObject] doubleValue];
- double latDifference = latMax - latMin;
- 
- if (latDifference > lonDifference) {
- stopsArray = [[newArray sortedArrayUsingDescriptors:sortDescs] copy];
- } else if (lonDifference > latDifference) {
- stopsArray = [[newArray sortedArrayUsingDescriptors:lonDescs] copy];
- }
- 
- 
- NSArray *stopGroups= [[doc nodesForXPath:@"//response/data/entry/stopGroupings/stopGrouping/stopGroups" error:&er][0] elementsForName:@"stopGroup"];
- NSArray *stopIdsHigh = [(GDataXMLElement *)stopGroups[1] elementsForName:@"stopIds"];
- NSArray *stopIdsLow = [(GDataXMLElement *)stopIdsHigh[0] elementsForName:@"string"];
- NSMutableArray *stopIds = [NSMutableArray array];
- for (GDataXMLElement *sE in stopIdsLow) {
- NSString *string = sE.stringValue;
- [stopIds addObject:string];
- }
- NSMutableArray *finalArray = [NSMutableArray array];
- for (NSString *idName in stopIds) {
- NSString *fname;
- for (NSDictionary *theDict in stopsArray) {
- fname = [theDict objectForKey:@"Stop ID"];
- 
- if ([fname isEqualToString:idName]) {
- [finalArray addObject:theDict];
- ;
- }
- }
- }
- 
- stopsArray = finalArray;
- 
- 
- 
- NSLog(@"Hidden: %@", [acivityView isHidden] ? @"YES" : @"NO");
- dispatch_async(dispatch_get_main_queue(), ^{
- [self.tableView setHidden:NO];
- [self.tableView reloadData];
- });
- 
- }
- @catch (NSException *e) {
- dispatch_async(dispatch_get_main_queue(), ^{
- [[[UIAlertView alloc] initWithTitle:@"Uh-oh!" message:@"Sorry but there is no route listed for that #. Please try again" delegate:nil cancelButtonTitle:@"Ok." otherButtonTitles:nil] show];
- });
- }
- @finally {
- dispatch_async(dispatch_get_main_queue(), ^{
- acivityView.hidden = YES;
- [indicator startAnimating];
- });
- }
- 
- 
- 
- });
- }
- -(void)searchStops {
- acivityView.hidden = NO;
- [indicator startAnimating];
- dispatch_queue_t download_queue = dispatch_queue_create("downloader", 0);
- dispatch_async(download_queue, ^{
- routes = [NSMutableArray array];
- NSString *URL = [NSString stringWithFormat:@"http://api.pugetsound.onebusaway.org/api/where/stop/1_%@.xml?key=TEST", numField.text];
- NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:URL]];
- NSData *xmlFile = [NSURLConnection sendSynchronousRequest:request returningResponse:Nil error:Nil];
- NSError *er;
- GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:xmlFile options:0 error:&er];
- @try {
- GDataXMLElement *stopInfoXML = [doc nodesForXPath:@"//response/data" error:Nil][0];
- NSString *stopNum = [NSString stringWithFormat:@"%@", [[stopInfoXML elementsForName:@"code"][0] stringValue]];
- NSString *lat = [NSString stringWithFormat:@"%@", [[stopInfoXML elementsForName:@"lat"][0] stringValue]];
- NSString *lon = [NSString stringWithFormat:@"%@", [[stopInfoXML elementsForName:@"lon"][0] stringValue]];
- NSString *nameDir = [NSString stringWithFormat:@"%@", [[stopInfoXML elementsForName:@"name"][0] stringValue]];
- nameDir = [self formattedAdd:nameDir];
- NSString *stopId = [NSString stringWithFormat:@"%@", [[stopInfoXML elementsForName:@"id"][0] stringValue]];
- stopDictionary = [NSDictionary dictionaryWithObjectsAndKeys:stopNum, @"Stop #", lat, @"Lat", lon, @"Lon",nameDir, @"Name", stopId, @"Stop ID", nil];
- 
- 
- GDataXMLElement *routesXML = [doc nodesForXPath:@"//response/data/routes" error:nil][0];
- NSArray *routesXMLArray = [routesXML elementsForName:@"route"];
- for (GDataXMLElement *route in routesXMLArray) {
- NSString *routeNum = [NSString stringWithFormat:@"%@", [[route elementsForName:@"shortName"][0] stringValue]];
- NSString *routeName = [NSString stringWithFormat:@"%@", [[route elementsForName:@"description"][0] stringValue]];
- NSString *routeID = [NSString stringWithFormat:@"%@", [[route elementsForName:@"id"][0] stringValue]];
- NSDictionary *routeDict = [NSDictionary dictionaryWithObjectsAndKeys:routeNum, @"#", routeName, @"Name", routeID, @"Route ID", nil];
- [routes addObject:routeDict];
- 
- }
- 
- dispatch_async(dispatch_get_main_queue(), ^{
- [self.tableView setHidden:NO];
- [self.tableView reloadData];
- });
- 
- }
- @catch (NSException *exception) {
- dispatch_async(dispatch_get_main_queue(), ^{
- [[[UIAlertView alloc] initWithTitle:@"Uh-oh!" message:@"Sorry but that stop could not be found." delegate:nil cancelButtonTitle:@"Ok." otherButtonTitles:nil] show];
- [self.tableView setHidden:YES];
- });
- 
- }
- @finally {
- dispatch_async(dispatch_get_main_queue(), ^{
- acivityView.hidden = YES;
- [indicator stopAnimating];
- });
- }
- 
- 
- });
- 
- 
- }
- */
 
 -(void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
@@ -442,150 +291,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    /*
-     if (isRoute) {
-     [[NSUserDefaults standardUserDefaults] setObject:[stopsArray objectAtIndex:indexPath.row] forKey:@"stopKey"];
-     [[NSUserDefaults standardUserDefaults] synchronize];
-     NSDictionary *first;
-     NSDictionary *second;
-     if (indexPath.row >= stopNumStop && indexPath.row <= stopsArray.count - stopNumStop) {
-     first = stopsArray[indexPath.row - stopNumStop];
-     second = stopsArray[indexPath.row + stopNumStop];
-     } else if (indexPath.row < stopNumStop) {
-     first = stopsArray[indexPath.row + stopNumStop];
-     second = [NSDictionary dictionary];
-     } else if (indexPath.row > stopsArray.count - stopNumStop) {
-     first = [NSDictionary dictionary];
-     second = stopsArray[indexPath.row - stopNumStop];
-     }
-     [[NSUserDefaults standardUserDefaults] setObject:@[first, second] forKey:@"nextStops"];
-     [[NSUserDefaults standardUserDefaults] synchronize];
-     
-     self.tableView.hidden = YES;
-     stopLabel.text = [[stopsArray objectAtIndex:indexPath.row] objectForKey:@"Name"];
-     NSLog(@"%@ %@", first, second);
-     } else {
-     int index = (int)indexPath.row;
-     NSString *routeID = [[routes objectAtIndex:index] objectForKey:@"Route ID"];
-     acivityView.hidden = NO;
-     [indicator startAnimating];
-     
-     dispatch_queue_t d = dispatch_queue_create("d", 0);
-     dispatch_async(d, ^{
-     stopsArray = [NSMutableArray array];
-     NSString *URL = [NSString stringWithFormat:@"http://api.pugetsound.onebusaway.org/api/where/stops-for-route/%@.xml?key=TEST&version=2", routeID];
-     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:URL]];
-     //[request setValue:agentString forHTTPHeaderField:@"User-Agent"];
-     NSData *xmlFile = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-     NSError *er;
-     GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:xmlFile options:0 error:&er];
-     @try {
-     NSArray *stops = [[doc nodesForXPath:@"//response/data/references/stops" error:&er][0] elementsForName:@"stop"];
-     
-     for (GDataXMLElement *stop in stops) {
-     NSString *stopNum = [NSString stringWithFormat:@"%@", [(GDataXMLElement *)[stop elementsForName:@"code"][0] stringValue]];
-     NSString *lat = [NSString stringWithFormat:@"%@", [(GDataXMLElement *)[stop elementsForName:@"lat"][0] stringValue]];
-     NSString *lon = [NSString stringWithFormat:@"%@", [(GDataXMLElement *)[stop elementsForName:@"lon"][0] stringValue]];
-     NSString *nameDir = [NSString stringWithFormat:@"%@", [(GDataXMLElement *)[stop elementsForName:@"name"][0] stringValue]];
-     nameDir = [self formattedAdd:nameDir];
-     NSString *stopId = [NSString stringWithFormat:@"%@", [(GDataXMLElement *)[stop elementsForName:@"id"][0] stringValue]];
-     
-     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:stopNum, @"Stop #", lat, @"Lat", lon, @"Lon",nameDir, @"Name", stopId, @"Stop ID", nil];
-     [stopsArray addObject:dict];
-     }
-     
-     NSArray *stopGroups= [[doc nodesForXPath:@"//response/data/entry/stopGroupings/stopGrouping/stopGroups" error:&er][0] elementsForName:@"stopGroup"];
-     NSArray *stopIdsHigh = [(GDataXMLElement *)stopGroups[1] elementsForName:@"stopIds"];
-     NSArray *stopIdsLow = [(GDataXMLElement *)stopIdsHigh[0] elementsForName:@"string"];
-     NSMutableArray *stopIds = [NSMutableArray array];
-     for (GDataXMLElement *sE in stopIdsLow) {
-     NSString *string = sE.stringValue;
-     [stopIds addObject:string];
-     }
-     NSMutableArray *finalArray = [NSMutableArray array];
-     for (NSString *idName in stopIds) {
-     NSString *fname;
-     for (NSDictionary *theDict in stopsArray) {
-     fname = [theDict objectForKey:@"Stop ID"];
-     
-     if ([fname isEqualToString:idName]) {
-     [finalArray addObject:theDict];
-     ;
-     }
-     }
-     }
-     
-     stopsArray = finalArray;
-     
-     @try {
-     NSLog(@"%@", stopDictionary);
-     NSLog(@"%@", stopsArray);
-     int index = (int)[stopsArray indexOfObject:stopDictionary];
-     NSLog(@"%d", index);
-     
-     NSMutableDictionary *theDict = [[stopsArray objectAtIndex:index] mutableCopy];
-     [theDict setObject:[[routes objectAtIndex:indexPath.row] objectForKey:@"#"] forKey:@"Route #"];
-     [[NSUserDefaults standardUserDefaults] setObject:[theDict copy]     forKey:@"stopKey"];
-     
-     
-     [[NSUserDefaults standardUserDefaults] synchronize];
-     NSDictionary *first;
-     NSDictionary *second;
-     if (index >= stopNumStop && index <= stopsArray.count - stopNumStop) {
-     first = stopsArray[index- stopNumStop];
-     second = stopsArray[index + stopNumStop];
-     } else if (index < stopNumStop) {
-     first = stopsArray[index + stopNumStop];
-     second = [NSDictionary dictionary];
-     } else if (index > stopsArray.count - stopNumStop) {
-     first = [NSDictionary dictionary];
-     second = stopsArray[index - stopNumStop];
-     }
-     NSLog(@"%@ %@", first, second);
-     [[NSUserDefaults standardUserDefaults] setObject:@[first, second] forKey:@"nextStops"];
-     [[NSUserDefaults standardUserDefaults] synchronize];
-     dispatch_async(dispatch_get_main_queue(), ^{
-     stopLabel.text = [[stopsArray objectAtIndex:index] objectForKey:@"Name"];
-     dispatch_async(dispatch_get_main_queue(), ^{
-     [tableView setHidden:YES];
-     });
-     
-     });
-     
-     
-     }
-     @catch (NSException *exception) {
-     NSLog(@"%@", exception);
-     dispatch_async(dispatch_get_main_queue(), ^{
-     [[[UIAlertView alloc] initWithTitle:@"Sorry!" message:@"Don't know what happened there. Please try searching via route, or try again." delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
-     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-     });
-     }
-     @finally {
-     dispatch_async(dispatch_get_main_queue(), ^{
-     acivityView.hidden = YES;
-     [indicator stopAnimating];
-     
-     });
-     }
-     }
-     @catch (NSException *e) {
-     dispatch_async(dispatch_get_main_queue(), ^{
-     [[[UIAlertView alloc] initWithTitle:@"Sorry!" message:@"Don't know what happened there. Please try searching via route, or try again." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
-     });
-     }
-     @finally {
-     dispatch_async(dispatch_get_main_queue(), ^{
-     acivityView.hidden = YES;
-     [indicator stopAnimating];
-     });
-     }
-     
-     
-     });
-     
-     }
-     */
+    
     
     if (tableView == routeSearchTable) {
         NSDictionary *routeDict = routeSearchArray[indexPath.row];
@@ -614,10 +320,7 @@
         dispatch_async(dispatch_queue_create("searchStop", 0), ^{
             NSArray *stops = [self stopsForRoute:direcDict[@"routeID"] direction:[direcDict[@"directionIdx"] intValue]];
             stopArray = stops;
-            NSMutableArray *paths = [NSMutableArray array];
-            for (int i = 0 ; i < stopArray.count; i++) {
-                [paths addObject:[NSIndexPath indexPathForRow:i inSection:0]];
-            }
+            
             dispatch_async(dispatch_get_main_queue(), ^{
                 [stopTable reloadData:YES];
                 double delayInSeconds = 0.4;
@@ -638,7 +341,8 @@
         
         NSMutableString *stopTextPre = [stopArray[indexPath.row] objectForKey:kName];
         
-        if ([stopTextPre rangeOfString:@"&"].location != NSNotFound) {
+        if ([stopTextPre rangeOfString:@" & "].location != NSNotFound) {
+            stopTextPre = [[stopTextPre stringByReplacingOccurrencesOfString:@" & " withString:@"& "] mutableCopy];
             [stopTextPre insertString:@"\n" atIndex:[stopTextPre rangeOfString:@"&"].location];
         }
         
@@ -688,10 +392,36 @@
     
     
     Map *m = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"Map"];
-    NSDictionary *stopd = stopArray[indexPath.row];
-    [m setStopData:stopd];
+    if (tableView == stopTable) {
+        
+        NSDictionary *stopd = stopArray[indexPath.row];
+        [m setStopData:stopd];
+        [m setIsStop:YES];
+        [self.navigationController pushViewController:m animated:YES];
+    } else if (tableView == routeSearchTable) {
+        
+        NSString *routeID = routeSearchArray[indexPath.row][@"routeID"];
+        if (isLine) {
+            routeID = [routeID stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+        }
+        
+        startP;
+        dispatch_async(dispatch_queue_create("router", 0), ^{
+            
+            NSData *routeDataD = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:SWF(@"http://api.pugetsound.onebusaway.org/api/where/stops-for-route/%@.json?key=TEST&version=2", routeID)]] returningResponse:nil error:nil];
+            NSDictionary *routeDict = [NSJSONSerialization JSONObjectWithData:routeDataD options:0 error:nil];
+            NSArray *polylines = routeDict[@"data"][@"entry"][@"polylines"];
+            [m setPolylines:polylines];
+            [m setIsStop:NO];
+            stopP;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.navigationController pushViewController:m animated:YES];
+            });
+        });
+        
+        
+    }
     m.navigationItem.title = @"map";
-    [self.navigationController pushViewController:m animated:YES];
     //NSLog(@"Accessory Row Tapped");
     
     
@@ -700,10 +430,6 @@
     return UIStatusBarStyleLightContent;
 }
 
-- (IBAction)stepperChange:(id)sender {
-    stopNumStop = stepper.value;
-    stepperLabel.text = [NSString stringWithFormat:@"%d", (int)stopNumStop];
-}
 
 - (IBAction)done:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -723,12 +449,16 @@
 #pragma mark - Bus Data
 
 -(NSArray *)searchRoutesWithPhrase:(NSString *)phrase {
+    phrase = [phrase capitalizedString];
     NSPredicate *filter = [NSPredicate predicateWithFormat:@"routeNum = %@", phrase];
     return [routeData filteredArrayUsingPredicate:filter];
 }
 
 -(NSArray *)directionsOfRoute:(NSString *)routeID {
     
+    if (isLine) {
+        routeID = [routeID stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    }
     NSData *JSONRouteData = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://api.pugetsound.onebusaway.org/api/where/stops-for-route/%@.json?key=TEST&version=2", routeID]]] returningResponse:nil error:nil];
     NSArray *routeDirectionGroup = [NSJSONSerialization JSONObjectWithData:JSONRouteData options:0 error:nil][@"data"][@"entry"][@"stopGroupings"][0][@"stopGroups"];
     NSMutableArray *directionArray = [NSMutableArray array];
@@ -805,13 +535,24 @@
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     
     if (textField == routeField) {
+        if ([routeField.text isEqualToString:@"F - LINE"]) {
+            MGAlert(@"UH-OH!", @"SORRY, THAT ROUTE DOESN'T EXIST JUST YET. PLEASE TRY AGAIN AFTER JUNE 24TH.");
+            return YES;
+        }
+        
         [routeField resignFirstResponder];
         startP;
         routeDirectionTable.hidden = YES;
         stopTable.hidden = YES;
         [stopTable setContentOffset:CGPointZero];
         dispatch_async(dispatch_queue_create("routeSearch", 0), ^{
-            NSArray *routes =[self searchRoutesWithPhrase:[routeField.text stringByReplacingOccurrencesOfString:@" " withString:@""]];
+            NSString *searchPhrase = [routeField.text stringByReplacingOccurrencesOfString:@" " withString:@""];
+            
+            if (isLine) {
+                searchPhrase = [searchPhrase stringByReplacingOccurrencesOfString:@"-" withString:@" "];
+            }
+            
+            NSArray *routes =[self searchRoutesWithPhrase:searchPhrase];
             if (routes.count == 0) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     MGAlert(@"UH-OH!", @"NO ROUTES WERE FOUND. PLEASE TRY AGAIN");
@@ -850,6 +591,66 @@
 
 
 
+- (IBAction)lineChoice:(id)sender {
+    
+    isLine = !isLine;
+    
+    if (isLine) {
+        [lineChoiceButton setTitle:@"123" forState:UIControlStateNormal];
+        for (UIButton *lineButton in lineButtons) {
+            lineButton.hidden = NO;
+        }
+        
+        for (UILabel *lineLabel in lineLabels) {
+            lineLabel.hidden = NO;
+        }
+        
+        for (UIButton *routeButton in numButtons) {
+            routeButton.hidden = YES;
+        }
+        
+    } else {
+        [lineChoiceButton setTitle:@"LINES" forState:UIControlStateNormal];
+        for (UIButton *lineButton in lineButtons) {
+            lineButton.hidden = YES;
+        }
+        
+        for (UILabel *lineLabel in lineLabels) {
+            lineLabel.hidden = YES;
+        }
+        
+        for (UIButton *routeButton in numButtons) {
+            routeButton.hidden = NO;
+        }
+    }
+    
+}
+
+- (IBAction)linePressed:(id)sender {
+    
+    switch ([sender tag]) {
+        case 1:
+            routeField.text = @" A - LINE";
+            break;
+        case 2:
+            routeField.text = @" B - LINE";
+            break;
+        case 3:
+            routeField.text = @" C - LINE";
+            break;
+        case 4:
+            routeField.text = @" D - LINE";
+            break;
+        case 5:
+            routeField.text = @" E - LINE";
+            break;
+        case 6:
+            routeField.text = @" F - LINE";
+            break;
+        default:
+            break;
+    }
+}
 @end
 
 

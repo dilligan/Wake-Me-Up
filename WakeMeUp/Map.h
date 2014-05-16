@@ -10,4 +10,9 @@
 
 @interface Map : UIViewController
 @property (nonatomic, strong) NSDictionary *stopData;
+@property (nonatomic, strong) NSArray *polylines;
+@property (nonatomic) BOOL isStop;
+
+-(void)traceRoute;
+
 @end

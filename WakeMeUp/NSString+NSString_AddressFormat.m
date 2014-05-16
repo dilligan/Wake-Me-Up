@@ -11,17 +11,22 @@
 @implementation NSString (NSString_AddressFormat)
 
 -(NSString *)formatAddress {
+    
     NSString *address = self;
+    
     address = [address capitalizedString];
+    
     NSArray *directions = @[@"Ne", @"Se", @"Sw", @"Nw"];
+    
     for (NSString *direc in directions) {
         if ([address rangeOfString:direc options:NSCaseInsensitiveSearch].location != NSNotFound) {
             address = [address stringByReplacingOccurrencesOfString:direc withString:[direc uppercaseString]];
         }
     }
+    
     NSRegularExpressionOptions regexOptions = NSRegularExpressionCaseInsensitive;
     NSString *pattern = @"[0-9]\\w+";
-    NSString *patterntwo = @"\\s(St|Ave|Pl)(\\s|$)";
+    NSString *patterntwo = @"\\s(St|Ave|Pl|Rd)(\\s|$)";
     
     
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:regexOptions error:nil];
@@ -39,7 +44,7 @@
     int count = 0;
     for (NSTextCheckingResult *re in matchestwo) {
         int index = (int)re.range.location + (int)re.range.length;
-        [adMut insertString:@"." atIndex:index + (count == 1 ? 1:-1)];
+        [adMut insertString:@"." atIndex:index + (count == 1 ? 0:-1)];
         count++;
     }
     address = [adMut copy];
